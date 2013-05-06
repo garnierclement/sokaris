@@ -8,7 +8,6 @@
 
 #include "Person.h"
 
-
 namespace sokaris
 {
 

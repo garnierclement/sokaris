@@ -7,3 +7,14 @@
 //
 
 #include "Picture.h"
+
+namespace sokaris
+{
+    Picture::Picture()
+    {
+    }
+    
+    Picture::~Picture()
+    {
+    }
+}

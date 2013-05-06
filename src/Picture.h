@@ -11,12 +11,23 @@
 
 #include <iostream>
 
+#include "Person.h"
+#include "Flux.h"
+#include "Camera.h"
+
 namespace sokaris
 {
     class Picture
     {
-        public :
         
+    private :
+        Camera *camera;
+        Flux *video;
+        vector<Person*> listOfPersons;
+        
+    public :
+        Picture(void);
+        ~Picture(void);
         
     };
 }

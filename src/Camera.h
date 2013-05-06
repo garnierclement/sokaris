@@ -10,14 +10,26 @@
 #define __sokaris__Camera__
 
 #include <iostream>
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
 
 namespace sokaris
 {
     class Camera
     {
-        public :
+    private :
+        Point2d coordinates;
         
+    public:
+        Camera(void);
+        Camera(Point2d coordinates);
+        ~Camera(void);
         
+        Point2d getCoordinates();
+        void setCoordinates(Point2d point);
+        
+
     };
 }
 

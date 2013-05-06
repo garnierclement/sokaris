@@ -7,3 +7,29 @@
 //
 
 #include "Camera.h"
+
+namespace sokaris
+{
+    Camera::Camera(void)
+    {
+    }
+    
+    Camera::Camera(Point2d coordinates)
+    {
+        this->coordinates = coordinates;
+    }
+    
+    Camera::~Camera(void)
+    {
+    }
+    
+    Point2d Camera::getCoordinates()
+    {
+        return this->coordinates;
+    }
+    
+    void Camera::setCoordinates(Point2d point)
+    {
+        this->coordinates = point;
+    }
+}

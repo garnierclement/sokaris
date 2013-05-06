@@ -1,0 +1,278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57D5276F17383F4100A31CE3 /* sokaris.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 57D5276E17383F4100A31CE3 /* sokaris.1 */; };
+		57D5277617383FEB00A31CE3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D5277517383FEB00A31CE3 /* main.cpp */; };
+		57D52779173840E400A31CE3 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D52777173840E400A31CE3 /* Map.cpp */; };
+		57D5277D1738434400A31CE3 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D5277B1738434400A31CE3 /* Camera.cpp */; };
+		57D527801738439D00A31CE3 /* Flux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D5277E1738439D00A31CE3 /* Flux.cpp */; };
+		57D52783173843FB00A31CE3 /* Picture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D52781173843FB00A31CE3 /* Picture.cpp */; };
+		57D52786173845EF00A31CE3 /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D52784173845EF00A31CE3 /* Person.cpp */; };
+		57D527891738468900A31CE3 /* Gaze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D527871738468900A31CE3 /* Gaze.cpp */; };
+		57D5278C173846C700A31CE3 /* Process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D5278A173846C600A31CE3 /* Process.cpp */; };
+		57D5278F173846E300A31CE3 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D5278D173846E300A31CE3 /* Test.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		57D5276717383F4100A31CE3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				57D5276F17383F4100A31CE3 /* sokaris.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		57D5276917383F4100A31CE3 /* sokaris */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sokaris; sourceTree = BUILT_PRODUCTS_DIR; };
+		57D5276E17383F4100A31CE3 /* sokaris.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; name = sokaris.1; path = /Users/garnierclement/Documents/dev/github/sokaris/src/sokaris.1; sourceTree = "<absolute>"; };
+		57D5277517383FEB00A31CE3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/../../../../../../../../../Users/garnierclement/Documents/dev/github/sokaris/src/main.cpp; sourceTree = "<absolute>"; };
+		57D52777173840E400A31CE3 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = SOURCE_ROOT; };
+		57D52778173840E400A31CE3 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = SOURCE_ROOT; };
+		57D5277B1738434400A31CE3 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = SOURCE_ROOT; };
+		57D5277C1738434400A31CE3 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = SOURCE_ROOT; };
+		57D5277E1738439D00A31CE3 /* Flux.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Flux.cpp; sourceTree = SOURCE_ROOT; };
+		57D5277F1738439D00A31CE3 /* Flux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flux.h; sourceTree = SOURCE_ROOT; };
+		57D52781173843FB00A31CE3 /* Picture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Picture.cpp; sourceTree = SOURCE_ROOT; };
+		57D52782173843FB00A31CE3 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = SOURCE_ROOT; };
+		57D52784173845EF00A31CE3 /* Person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = SOURCE_ROOT; };
+		57D52785173845EF00A31CE3 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = SOURCE_ROOT; };
+		57D527871738468900A31CE3 /* Gaze.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gaze.cpp; sourceTree = SOURCE_ROOT; };
+		57D527881738468900A31CE3 /* Gaze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gaze.h; sourceTree = SOURCE_ROOT; };
+		57D5278A173846C600A31CE3 /* Process.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Process.cpp; sourceTree = SOURCE_ROOT; };
+		57D5278B173846C700A31CE3 /* Process.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Process.h; sourceTree = SOURCE_ROOT; };
+		57D5278D173846E300A31CE3 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = SOURCE_ROOT; };
+		57D5278E173846E300A31CE3 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57D5276617383F4100A31CE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		57D5276017383F4100A31CE3 = {
+			isa = PBXGroup;
+			children = (
+				57D5276B17383F4100A31CE3 /* sokaris */,
+				57D5276A17383F4100A31CE3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57D5276A17383F4100A31CE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57D5276917383F4100A31CE3 /* sokaris */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57D5276B17383F4100A31CE3 /* sokaris */ = {
+			isa = PBXGroup;
+			children = (
+				57D5277517383FEB00A31CE3 /* main.cpp */,
+				57D5277A173842F600A31CE3 /* Classes */,
+				57D5276E17383F4100A31CE3 /* sokaris.1 */,
+			);
+			path = sokaris;
+			sourceTree = "<group>";
+		};
+		57D5277A173842F600A31CE3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				57D52777173840E400A31CE3 /* Map.cpp */,
+				57D52778173840E400A31CE3 /* Map.h */,
+				57D5277B1738434400A31CE3 /* Camera.cpp */,
+				57D5277C1738434400A31CE3 /* Camera.h */,
+				57D5277E1738439D00A31CE3 /* Flux.cpp */,
+				57D5277F1738439D00A31CE3 /* Flux.h */,
+				57D52781173843FB00A31CE3 /* Picture.cpp */,
+				57D52782173843FB00A31CE3 /* Picture.h */,
+				57D52784173845EF00A31CE3 /* Person.cpp */,
+				57D52785173845EF00A31CE3 /* Person.h */,
+				57D527871738468900A31CE3 /* Gaze.cpp */,
+				57D527881738468900A31CE3 /* Gaze.h */,
+				57D5278A173846C600A31CE3 /* Process.cpp */,
+				57D5278B173846C700A31CE3 /* Process.h */,
+				57D5278D173846E300A31CE3 /* Test.cpp */,
+				57D5278E173846E300A31CE3 /* Test.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57D5276817383F4100A31CE3 /* sokaris */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57D5277217383F4100A31CE3 /* Build configuration list for PBXNativeTarget "sokaris" */;
+			buildPhases = (
+				57D5276517383F4100A31CE3 /* Sources */,
+				57D5276617383F4100A31CE3 /* Frameworks */,
+				57D5276717383F4100A31CE3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sokaris;
+			productName = sokaris;
+			productReference = 57D5276917383F4100A31CE3 /* sokaris */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57D5276117383F4100A31CE3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "AKH Partners";
+			};
+			buildConfigurationList = 57D5276417383F4100A31CE3 /* Build configuration list for PBXProject "sokaris" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 57D5276017383F4100A31CE3;
+			productRefGroup = 57D5276A17383F4100A31CE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57D5276817383F4100A31CE3 /* sokaris */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57D5276517383F4100A31CE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57D5277617383FEB00A31CE3 /* main.cpp in Sources */,
+				57D52779173840E400A31CE3 /* Map.cpp in Sources */,
+				57D5277D1738434400A31CE3 /* Camera.cpp in Sources */,
+				57D527801738439D00A31CE3 /* Flux.cpp in Sources */,
+				57D52783173843FB00A31CE3 /* Picture.cpp in Sources */,
+				57D52786173845EF00A31CE3 /* Person.cpp in Sources */,
+				57D527891738468900A31CE3 /* Gaze.cpp in Sources */,
+				57D5278C173846C700A31CE3 /* Process.cpp in Sources */,
+				57D5278F173846E300A31CE3 /* Test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		57D5277017383F4100A31CE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		57D5277117383F4100A31CE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		57D5277317383F4100A31CE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		57D5277417383F4100A31CE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57D5276417383F4100A31CE3 /* Build configuration list for PBXProject "sokaris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57D5277017383F4100A31CE3 /* Debug */,
+				57D5277117383F4100A31CE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57D5277217383F4100A31CE3 /* Build configuration list for PBXNativeTarget "sokaris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57D5277317383F4100A31CE3 /* Debug */,
+				57D5277417383F4100A31CE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57D5276117383F4100A31CE3 /* Project object */;
+}

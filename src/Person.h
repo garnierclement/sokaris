@@ -10,12 +10,25 @@
 #define __sokaris__Person__
 
 #include <iostream>
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
 
 namespace sokaris
 {
     class Person
     {
-        public :
+        
+    private :
+        Point2d coordinates;
+        
+    public:
+        Person(void);
+        Person(Point2d coordinates);
+        ~Person(void);
+        
+        Point2d getCoordinates();
+        void setCoordinates(Point2d point);
         
         
     };

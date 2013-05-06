@@ -7,3 +7,31 @@
 //
 
 #include "Person.h"
+
+
+namespace sokaris
+{
+
+    Person::Person(void)
+    {
+    }
+    
+    Person::Person(Point2d coordinates)
+    {
+        this->coordinates = coordinates;
+    }
+    
+    Person::~Person(void)
+    {
+    }
+    
+    Point2d Person::getCoordinates()
+    {
+        return this->coordinates;
+    }
+    
+    void Person::setCoordinates(Point2d point)
+    {
+        this->coordinates = point;
+    }
+}

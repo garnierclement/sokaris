@@ -10,13 +10,32 @@
 #define __sokaris__Test__
 
 #include <iostream>
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+using namespace std;
+using namespace cv;
 
 namespace sokaris
 {
     class Test
     {
-        public :
         
+    private :
+        String path;
+        String face_cascade_name;
+        String eyes_cascade_name;
+        CascadeClassifier face_cascade;
+        CascadeClassifier eyes_cascade;
+        string window_name;
+        RNG rng;
+        
+    public :
+        Test();
+        ~Test();
+        int testCascadeClassifier();
+        void detectAndDisplay(Mat frame);
         
     };
 }

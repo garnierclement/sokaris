@@ -25,6 +25,11 @@ using namespace sokaris;
 int main(int argc, const char * argv[])
 {
     cout << "Welcome on Sokaris!\n";
+
+#ifdef _WIN32 || _WIN64
+	system("pause");
+#endif // _WIN32
+
     return 0;
 }
 

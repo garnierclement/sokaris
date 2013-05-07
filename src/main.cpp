@@ -25,6 +25,7 @@ using namespace sokaris;
 int main(int argc, const char * argv[])
 {
     cout << "Welcome on Sokaris!\n";
+    cout << "joel";
     return 0;
 }
 

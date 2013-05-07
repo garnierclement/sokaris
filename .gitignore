@@ -8,3 +8,7 @@ src/sokaris.xcodeproj/project.xcworkspace/xcuserdata/garnierclement.xcuserdatad/
 src/sokaris.xcodeproj/project.xcworkspace/xcuserdata/joel.xcuserdatad/UserInterfaceState.xcuserstate
 
 src/.DS_Store
+
+src/sokaris.xcodeproj/project.xcworkspace/xcuserdata/garnierclement.xcuserdatad/UserInterfaceState.xcuserstate
+
+*.xcuserstate

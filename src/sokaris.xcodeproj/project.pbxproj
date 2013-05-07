@@ -51,8 +51,8 @@
 
 /* Begin PBXFileReference section */
 		57D5276917383F4100A31CE3 /* sokaris */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sokaris; sourceTree = BUILT_PRODUCTS_DIR; };
-		57D5276E17383F4100A31CE3 /* sokaris.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; name = sokaris.1; path = /Users/garnierclement/Documents/dev/github/sokaris/src/sokaris.1; sourceTree = "<absolute>"; };
-		57D5277517383FEB00A31CE3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/../../../../../../../../../Users/garnierclement/Documents/dev/github/sokaris/src/main.cpp; sourceTree = "<absolute>"; };
+		57D5276E17383F4100A31CE3 /* sokaris.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = sokaris.1; sourceTree = SOURCE_ROOT; };
+		57D5277517383FEB00A31CE3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
 		57D52777173840E400A31CE3 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = SOURCE_ROOT; };
 		57D52778173840E400A31CE3 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = SOURCE_ROOT; };
 		57D5277B1738434400A31CE3 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = SOURCE_ROOT; };
@@ -177,7 +177,6 @@
 		57D527911738497E00A31CE3 /* OpenCV Framework */ = {
 			isa = PBXGroup;
 			children = (
-				57F4C1201738520200F73EE6 /* include */,
 				57F4C11F173851E900F73EE6 /* lib */,
 			);
 			name = "OpenCV Framework";
@@ -205,13 +204,6 @@
 				57D527A21738499A00A31CE3 /* libopencv_videostab.dylib */,
 			);
 			name = lib;
-			sourceTree = "<group>";
-		};
-		57F4C1201738520200F73EE6 /* include */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

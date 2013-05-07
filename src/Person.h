@@ -12,6 +12,8 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
+#include "Gaze.h"
+
 using namespace cv;
 
 namespace sokaris
@@ -20,9 +22,11 @@ namespace sokaris
     {
         
     private :
-        Point2d coordinates;
+        Point2d coordinates;    // Coordonnées de la personne dans l'espace
+        Gaze *gaze;             // Regard de la personne
+        Scalar colour;          // Couleur de la personne
         
-    public:
+    public :
         Person(void);
         Person(Point2d coordinates);
         ~Person(void);

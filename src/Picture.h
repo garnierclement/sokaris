@@ -10,6 +10,7 @@
 #define __sokaris__Picture__
 
 #include <iostream>
+#include <ctime>
 
 #include "Person.h"
 #include "Flux.h"
@@ -21,9 +22,10 @@ namespace sokaris
     {
         
     private :
-        Camera *camera;
-        Flux *video;
-        vector<Person*> listOfPersons;
+        tm timestamp;                       // Date de l'image
+        Camera *camera;                     // Caméra d'origine
+        Flux *video;                        // Flux vidéo
+        vector<Person*> listOfPersons;      // Liste des personnes dans l'image
         
     public :
         Picture(void);

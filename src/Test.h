@@ -34,6 +34,9 @@ namespace sokaris
     public :
         Test();
         ~Test();
+        
+        // test detection de visage + yeux
+        // http://docs.opencv.org/doc/tutorials/objdetect/cascade_classifier/cascade_classifier.html#cascade-classifier
         int testCascadeClassifier();
         void detectAndDisplay(Mat frame);
         

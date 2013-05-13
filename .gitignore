@@ -19,3 +19,5 @@ src/VS2012/sokaris.sdf
 src/VS2012/sokaris.opensdf
 
 src/VS2012/sokaris.v11.suo
+
+src/VS2012/x64/Debug/

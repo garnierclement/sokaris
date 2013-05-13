@@ -26,16 +26,18 @@ int main(int argc, const char * argv[])
 {
     cout << "Welcome on Sokaris!\n";
 
+	Test *t = new Test();
+    
+    t->testCascadeClassifier();
+    
+    delete t;
+
 #if defined(_WIN32) || defined(_WIN64)
 	cout << "je m'appelle Fujia" << endl;
 	system("pause");
 #endif // _WIN32 || _WIN64
     
-    Test *t = new Test();
-    
-    t->testCascadeClassifier();
-    
-    delete t;
+   
 
     return 0;
 }

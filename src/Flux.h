@@ -10,12 +10,25 @@
 #define __sokaris__Flux__
 
 #include <iostream>
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
 
 namespace sokaris
 {
     class Flux
     {
-        public :
+    private :
+        VideoCapture video;
+        String path;
+        String filename;    
+        
+    
+    public :
+        Flux(void);
+        Flux(String path, String filename);
+        ~Flux(void);
+        int read(void);
         
         
     };

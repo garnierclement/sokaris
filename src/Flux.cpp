@@ -55,8 +55,8 @@ namespace sokaris
     string Flux::addLegend(Mat& picture)
     {
         stringstream legend("");
-        legend << video.get(CV_CAP_PROP_POS_MSEC) << " ms";
-        putText(picture, legend.str(), Point(50,150), 1, 4.0, Scalar(50,50,50));
+        legend << (int)video.get(CV_CAP_PROP_POS_MSEC) << " ms";
+        putText(picture, legend.str(), Point(100,400), 1, 1.0, Scalar(50,50,50));
         return legend.str();
     }
 }

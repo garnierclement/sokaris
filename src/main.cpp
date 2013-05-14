@@ -38,7 +38,7 @@ int main(int argc, const char * argv[])
 #endif // _WIN32 || _WIN64
     
     Flux fl("/Users/garnierclement/Desktop/","test.mp4");
-    fl.read();
+    fl.read(true);
 
     return 0;
 }

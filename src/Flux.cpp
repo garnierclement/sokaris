@@ -28,6 +28,7 @@ namespace sokaris
     {
         video.open(path+filename);
         if (!video.isOpened()) {
+            cout << "Unable to open video " << filename << " in " << path << endl;
             return EXIT_FAILURE;
         }
         
@@ -35,15 +36,15 @@ namespace sokaris
         
         Mat picture;
         
-        while (1) {
-            video >> picture;
+        while (video.read(picture))
+        {
             imshow(filename, picture);
+            
             if (waitKey(10) >= 0)
-                break;
+                break;  
         }
         
-        waitKey();
-        video.release();
+        destroyWindow(filename);
         return EXIT_SUCCESS;
     }
 }

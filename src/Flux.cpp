@@ -24,7 +24,8 @@ namespace sokaris
         this->filename = filename;
     }
     
-    int Flux::read(void)
+    // read a video
+    int Flux::read(bool legend)
     {
         video.open(path+filename);
         if (!video.isOpened()) {
@@ -38,6 +39,8 @@ namespace sokaris
         
         while (video.read(picture))
         {
+            if (legend)
+                addLegend(picture);
             imshow(filename, picture);
             
             if (waitKey(10) >= 0)
@@ -46,5 +49,14 @@ namespace sokaris
         
         destroyWindow(filename);
         return EXIT_SUCCESS;
+    }
+    
+    // create and add a legend onto a picture
+    string Flux::addLegend(Mat& picture)
+    {
+        stringstream legend("");
+        legend << video.get(CV_CAP_PROP_POS_MSEC) << " ms";
+        putText(picture, legend.str(), Point(50,150), 1, 4.0, Scalar(50,50,50));
+        return legend.str();
     }
 }

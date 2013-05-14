@@ -10,6 +10,7 @@
 #define __sokaris__Flux__
 
 #include <iostream>
+#include <sstream>
 #include <opencv2/opencv.hpp>
 
 using namespace cv;
@@ -22,15 +23,16 @@ namespace sokaris
     private :
         VideoCapture video;
         String path;
-        String filename;    
+        String filename;
         
     
     public :
         Flux(void);
         Flux(String path, String filename);
         ~Flux(void);
-        int read(void);
-        
+        int read(bool legend= 0);                         // read video
+        string addLegend(Mat& picture);         // create and add a legend onto a picture
+    
         
     };
 }

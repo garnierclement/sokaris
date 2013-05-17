@@ -7,3 +7,13 @@
 //
 
 #include "Process.h"
+
+namespace sokaris
+{
+    int Process::testCallback(Mat& picture)
+    {
+        Mat tmp = picture.clone();
+        Canny(tmp, picture, 3, 4);
+        return 1;
+    }
+}

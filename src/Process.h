@@ -10,13 +10,17 @@
 #define __sokaris__Process__
 
 #include <iostream>
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
 
 namespace sokaris
 {
     class Process
     {
-        public :
+    public :
         
+        static int testCallback(Mat& picture);
         
     };
 }

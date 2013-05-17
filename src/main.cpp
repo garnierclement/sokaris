@@ -30,16 +30,17 @@ int main(int argc, const char * argv[])
 
 	Test *t = new Test();
     t->testCascadeClassifier();
-    delete t;
+    //t->trainedClassifier();
+	delete t;
 
 #if defined(_WIN32) || defined(_WIN64)
 	cout << "je m'appelle Fujia" << endl;
 	system("pause");
 #endif // _WIN32 || _WIN64
-    
+    /*
     Flux fl("/Users/garnierclement/Desktop/","test.mp4");
     fl.display(true, Process::testCallback);
-
+	*/
     return 0;
 }
 

@@ -15,11 +15,11 @@ namespace sokaris
     Test::Test()
     {
         this->path = "/usr/local/Cellar/opencv/2.4.5/share/OpenCV/haarcascades/";
-		this->path = "C:/Program Files (x86)/opencv/data/haarcascades/";
-		this->face_cascade_name = "haarcascade_frontalface_alt.xml";
-        this->eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
-		//this->path = "C:/Program Files (x86)/opencv/data/lbpcascades/";
-		//this->face_cascade_name = "lbpcascade_frontalface.xml";
+		//this->path = "C:/Program Files (x86)/opencv/data/haarcascades/";
+		//this->face_cascade_name = "haarcascade_frontalface_alt.xml";
+        //this->eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
+		this->path = "C:/Program Files (x86)/opencv/data/lbpcascades/";
+		this->face_cascade_name = "lbpcascade_frontalface.xml";
         this->window_name = "Capture - Face detection";
         this->rng(1234);
     }
@@ -35,7 +35,7 @@ namespace sokaris
         
         //-- 1. Load the cascades
         if( !face_cascade.load( path+face_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
-        if( !eyes_cascade.load( path+eyes_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
+       // if( !eyes_cascade.load( path+eyes_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
         
         //-- 2. Read the video stream
         capture = cvCaptureFromCAM( -1 );
@@ -74,10 +74,12 @@ namespace sokaris
             Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
             ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
             //rectangle(frame, center, Scalar(255, 0, 0), 1, 8, 0);
-			rectangle( frame, center, center, Scalar( 0, 255, 255 ), 4, 8, 0 );
+			//rectangle( frame, center, center, Scalar( 0, 255, 255 ), 4, 8, 0 );
+			rectangle( frame, center, center, CV_RGB(0, 255,0), 1);
+			//rectangle(frame, faces[i].x, faces[i].y, CV_RGB(0, 255,0), 1);
             Mat faceROI = frame_gray( faces[i] );
             std::vector<Rect> eyes;
-            
+            /*
             //-- In each face, detect eyes
             eyes_cascade.detectMultiScale( faceROI, eyes, 1.1, 2, 0 |CV_HAAR_SCALE_IMAGE, Size(30, 30) );
             
@@ -89,12 +91,13 @@ namespace sokaris
 				int lineType = 8;
 				circle( frame, center, w/32.0, Scalar( 0, 0, 255 ), thickness, lineType );
                 int radius = cvRound( (eyes[j].width + eyes[j].height)*0.25 );
-				/*stringstream textImage("");
+				stringstream textImage("");
 				textImage << center;
-				putText(frame, textImage.str(), center, 1, 4.0, Scalar(50,50,50));*/
+				putText(frame, textImage.str(), center, 1, 4.0, Scalar(50,50,50));
                 circle( frame, center, radius, Scalar( 255, 0, 0 ), 4, 8, 0 );
 				cout << center << endl;
             }
+			*/
         }
         //-- Show what you got
         imshow( window_name, frame );

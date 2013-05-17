@@ -30,9 +30,8 @@ namespace sokaris
         Flux(void);
         Flux(String path, String filename);
         ~Flux(void);
-        int read(bool legend= 0);                         // read video
-        string addLegend(Mat& picture);         // create and add a legend onto a picture
-    
+        int display(bool legend = 0, int (*callback)(Mat& picture) = NULL);                         // display video on screen
+        string addLegend(Mat& picture);         // create and add a legend onto a picture    
         
     };
 }

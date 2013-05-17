@@ -25,7 +25,7 @@ namespace sokaris
     }
     
     // read a video
-    int Flux::read(bool legend)
+    int Flux::display(bool legend, int (*callback)(Mat&))
     {
         video.open(path+filename);
         if (!video.isOpened()) {
@@ -41,6 +41,8 @@ namespace sokaris
         {
             if (legend)
                 addLegend(picture);
+            if (callback != NULL)
+                (*callback)(picture);
             imshow(filename, picture);
             
             if (waitKey(10) >= 0)
@@ -59,4 +61,5 @@ namespace sokaris
         putText(picture, legend.str(), Point(100,400), 1, 1.0, Scalar(50,50,50));
         return legend.str();
     }
+    
 }

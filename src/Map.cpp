@@ -19,7 +19,7 @@ namespace sokaris
     {
     }
 
-	int Map::setCoordinates(vector<Point3d*> listCoordinates, string filename)
+	int Map::setCoordinates(vector<MapPoint*> listCoordinates, string filename)
 	{
 		FileStorage fs(filename, FileStorage::WRITE);
 		fs << "Map";										// text - mapping

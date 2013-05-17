@@ -19,18 +19,19 @@ namespace sokaris
     class Camera
     {
     private :
-        Point2d coordinates;        // Coordonnées de la caméra
-        int height;                 // Hauteur de la caméra
-        int angle;                  // Angle de vue de la caméra
+        Point3d coordinates;        // Coordonnées de la caméra, avec Hauteur de la caméra
+        float angleX;               // Angle de vue de la caméra
+		float angleY;
+		float angleZ;
         int framerate;              // Nombre d'image par seconde
         
     public:
         Camera(void);
-        Camera(Point2d coordinates);
+        Camera(Point3d coordinates);
         ~Camera(void);
         
-        Point2d getCoordinates();
-        void setCoordinates(Point2d point);
+        Point3d getCoordinates();
+        void setCoordinates(Point3d point);
         
 
     };

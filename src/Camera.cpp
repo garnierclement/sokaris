@@ -14,7 +14,7 @@ namespace sokaris
     {
     }
     
-    Camera::Camera(Point2d coordinates)
+    Camera::Camera(Point3d coordinates)
     {
         this->coordinates = coordinates;
     }
@@ -23,12 +23,12 @@ namespace sokaris
     {
     }
     
-    Point2d Camera::getCoordinates()
+    Point3d Camera::getCoordinates()
     {
         return this->coordinates;
     }
     
-    void Camera::setCoordinates(Point2d point)
+    void Camera::setCoordinates(Point3d point)
     {
         this->coordinates = point;
     }

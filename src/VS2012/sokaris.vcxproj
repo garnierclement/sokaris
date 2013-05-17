@@ -70,10 +70,12 @@
     <ClCompile Include="..\Gaze.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\Map.cpp" />
+    <ClCompile Include="..\test2.cpp" />
     <ClCompile Include="..\Person.cpp" />
     <ClCompile Include="..\Picture.cpp" />
     <ClCompile Include="..\Process.cpp" />
     <ClCompile Include="..\Test.cpp" />
+    <ClCompile Include="..\test3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Camera.h" />

@@ -19,15 +19,21 @@
 
 namespace sokaris
 {
+	struct MapPoint{
+		Point3d point;							// Point pour définir la terre
+		float height;							// Hauteur jusqu'au plafond
+		Point3d* next;							// Pour lier au prochain point
+	};
+
 	class Map
 	{
 	private :
 		vector<Camera*> listOfCameras;			// Liste des caméras dans le plan
-		vector<Point3d*> listOfCoordinates;		// Liste des points cruciaux pour le modèle 3D
+		vector<MapPoint*> listOfCoordinates;	// Liste des points cruciaux pour le modèle 3D
 
 	public :
 		int getCoordinates(string filename);	// Depuis un fichier xml
-		int setCoordinates(vector<Point3d*> listCoordinates, string filename);
+		int setCoordinates(vector<MapPoint*> listCoordinates, string filename);
 												// Stocker dans un fichier xml
 		int getCameras(string filename);		// Depuis un fichier xml
 		int setCameras(vector<Camera*> listCoordinates, string filename);

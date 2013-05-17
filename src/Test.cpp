@@ -8,13 +8,18 @@
 
 #include "Test.h"
 
+#define w 400
+
 namespace sokaris
 {
     Test::Test()
     {
-        this->path = "/usr/local/Cellar/opencv/2.4.5/share/OpenCV/haarcascades/";
-        this->face_cascade_name = "haarcascade_frontalface_alt.xml";
+        //this->path = "/usr/local/Cellar/opencv/2.4.5/share/OpenCV/haarcascades/";
+		this->path = "C:/Program Files (x86)/opencv/data/haarcascades/";
+		//this->face_cascade_name = "haarcascade_frontalface_alt.xml";
         this->eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
+		this->path = "C:/Program Files (x86)/opencv/data/lbpcascades/";
+		this->face_cascade_name = "lbpcascade_frontalface.xml";
         this->window_name = "Capture - Face detection";
         this->rng(1234);
     }
@@ -68,7 +73,8 @@ namespace sokaris
         {
             Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
             ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
-            
+            //rectangle(frame, center, Scalar(255, 0, 0), 1, 8, 0);
+			rectangle( frame, center, center, Scalar( 0, 255, 255 ), 4, 8, 0 );
             Mat faceROI = frame_gray( faces[i] );
             std::vector<Rect> eyes;
             
@@ -78,11 +84,57 @@ namespace sokaris
             for( int j = 0; j < eyes.size(); j++ )
             {
                 Point center( faces[i].x + eyes[j].x + eyes[j].width*0.5, faces[i].y + eyes[j].y + eyes[j].height*0.5 );
+				Point pt = center;
+				int thickness = -1;
+				int lineType = 8;
+				circle( frame, center, w/32.0, Scalar( 0, 0, 255 ), thickness, lineType );
                 int radius = cvRound( (eyes[j].width + eyes[j].height)*0.25 );
+				stringstream textImage("");
+				textImage << center;
+				putText(frame, textImage.str, center, 1, 4.0, Scalar(50,50,50));
                 circle( frame, center, radius, Scalar( 255, 0, 0 ), 4, 8, 0 );
+				cout << center << endl;
             }
         }
         //-- Show what you got
         imshow( window_name, frame );
     }
+
+	void Test::testAdaBoost(){
+		//1. Declare a structure to keep the data
+		CvMLData cvml;
+		//2. Read the file
+		cvml.read_csv("samples.csv");
+		//3. Indicate which column is the response
+		cvml.set_response_idx(0);
+
+		//1. Select 40 for the training
+		CvTrainTestSplit cvtts(40, true);
+		//2. Assign the division to the data
+		cvml.set_train_test_split(&cvtts);
+
+		//1. Declare the classifier
+		CvBoost boost;
+		//2. Train it with 100 features
+		boost.train(&cvml, CvBoostParams(CvBoost::REAL, 100, 0, 1, false, 0), false);
+	}
+
+	
+	static void read_csv(const string& filename, vector<Mat>& images, vector<int>& labels, char separator = ';') {
+		std::ifstream file(filename.c_str(), ifstream::in);
+		if (!file) {
+			string error_message = "No valid input file was given, please check the given filename.";
+			CV_Error(CV_StsBadArg, error_message);
+		}
+		string line, path, classlabel;
+		while (getline(file, line)) {
+			stringstream liness(line);
+			getline(liness, path, separator);
+			getline(liness, classlabel);
+			if(!path.empty() && !classlabel.empty()) {
+				images.push_back(imread(path, 0));
+				labels.push_back(atoi(classlabel.c_str()));
+			}
+		}
+}
 }

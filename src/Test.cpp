@@ -91,7 +91,7 @@ namespace sokaris
                 int radius = cvRound( (eyes[j].width + eyes[j].height)*0.25 );
 				stringstream textImage("");
 				textImage << center;
-				putText(frame, textImage.str, center, 1, 4.0, Scalar(50,50,50));
+				putText(frame, textImage.str(), center, 1, 4.0, Scalar(50,50,50));
                 circle( frame, center, radius, Scalar( 255, 0, 0 ), 4, 8, 0 );
 				cout << center << endl;
             }

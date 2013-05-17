@@ -12,6 +12,8 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <vector>
+#include <cstdlib>
 #include <opencv2/objdetect/objdetect.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -44,7 +46,8 @@ namespace sokaris
         // http://docs.opencv.org/doc/tutorials/objdetect/cascade_classifier/cascade_classifier.html#cascade-classifier
         int testCascadeClassifier();
         void detectAndDisplay(Mat frame);
-		void testAdaBoost();
+		void trainedClassifier();
+		void read_csv(const string& filename, vector<Mat>& images, vector<int>& labels, char separator = ';');
         
     };
 }

@@ -14,12 +14,12 @@ namespace sokaris
 {
     Test::Test()
     {
-        //this->path = "/usr/local/Cellar/opencv/2.4.5/share/OpenCV/haarcascades/";
+        this->path = "/usr/local/Cellar/opencv/2.4.5/share/OpenCV/haarcascades/";
 		this->path = "C:/Program Files (x86)/opencv/data/haarcascades/";
-		//this->face_cascade_name = "haarcascade_frontalface_alt.xml";
+		this->face_cascade_name = "haarcascade_frontalface_alt.xml";
         this->eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
-		this->path = "C:/Program Files (x86)/opencv/data/lbpcascades/";
-		this->face_cascade_name = "lbpcascade_frontalface.xml";
+		//this->path = "C:/Program Files (x86)/opencv/data/lbpcascades/";
+		//this->face_cascade_name = "lbpcascade_frontalface.xml";
         this->window_name = "Capture - Face detection";
         this->rng(1234);
     }
@@ -89,9 +89,9 @@ namespace sokaris
 				int lineType = 8;
 				circle( frame, center, w/32.0, Scalar( 0, 0, 255 ), thickness, lineType );
                 int radius = cvRound( (eyes[j].width + eyes[j].height)*0.25 );
-				stringstream textImage("");
+				/*stringstream textImage("");
 				textImage << center;
-				putText(frame, textImage.str(), center, 1, 4.0, Scalar(50,50,50));
+				putText(frame, textImage.str(), center, 1, 4.0, Scalar(50,50,50));*/
                 circle( frame, center, radius, Scalar( 255, 0, 0 ), 4, 8, 0 );
 				cout << center << endl;
             }
@@ -100,7 +100,9 @@ namespace sokaris
         imshow( window_name, frame );
     }
 
-	void Test::testAdaBoost(){
+	void Test::trainedClassifier(){
+		
+		/* STEP 2. Opening the file */
 		//1. Declare a structure to keep the data
 		CvMLData cvml;
 		//2. Read the file
@@ -108,19 +110,37 @@ namespace sokaris
 		//3. Indicate which column is the response
 		cvml.set_response_idx(0);
 
+		/* STEP 3. Splitting the samples */
 		//1. Select 40 for the training
 		CvTrainTestSplit cvtts(40, true);
 		//2. Assign the division to the data
 		cvml.set_train_test_split(&cvtts);
 
+		printf("Training ... ");
+		/* STEP 4. The training */
 		//1. Declare the classifier
 		CvBoost boost;
 		//2. Train it with 100 features
 		boost.train(&cvml, CvBoostParams(CvBoost::REAL, 100, 0, 1, false, 0), false);
-	}
 
-	
-	static void read_csv(const string& filename, vector<Mat>& images, vector<int>& labels, char separator = ';') {
+		/* STEP 5. Calculating the testing and training error */
+		// 1. Declare a couple of vectors to save the predictions of each sample
+		std::vector<float> train_responses, test_responses;
+		// 2. Calculate the training error
+		float fl1 = boost.calc_error(&cvml,CV_TRAIN_ERROR,&train_responses);
+		// 3. Calculate the test error
+		float fl2 = boost.calc_error(&cvml,CV_TEST_ERROR,&test_responses);
+		printf("Error train %f \n", fl1);
+		printf("Error test %f \n", fl2);
+
+		/* STEP 6. Save your classifier */
+		// Save the trained classifier
+		boost.save("./trained_boost.xml", "boost");
+
+		//return EXIT_SUCCESS;
+		}
+
+	void Test::read_csv(const string& filename, vector<Mat>& images, vector<int>& labels, char separator = ';') {
 		std::ifstream file(filename.c_str(), ifstream::in);
 		if (!file) {
 			string error_message = "No valid input file was given, please check the given filename.";

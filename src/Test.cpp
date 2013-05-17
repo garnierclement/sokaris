@@ -140,7 +140,7 @@ namespace sokaris
 		//return EXIT_SUCCESS;
 		}
 
-	void Test::read_csv(const string& filename, vector<Mat>& images, vector<int>& labels, char separator = ';') {
+	void Test::read_csv(const string& filename, vector<Mat>& images, vector<int>& labels, char separator) {
 		std::ifstream file(filename.c_str(), ifstream::in);
 		if (!file) {
 			string error_message = "No valid input file was given, please check the given filename.";

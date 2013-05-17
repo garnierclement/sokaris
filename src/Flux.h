@@ -24,6 +24,7 @@ namespace sokaris
         VideoCapture video;
         String path;
         String filename;
+        int zero;
         
     
     public :

@@ -1,8 +1,3 @@
-% Projet Innovant (PI) - INSA Telecom
-% AKH Partners
-% mai 2013
-
-
 # Sokaris - AKH Partners
 
 ![AKH Partners](images/akh_small.png)
@@ -38,6 +33,5 @@ Il aura les caractéristiques suivantes :
 - blabla
 - sdfsfd
 
-### 
-
+Et se basent sur les techniques ...
 

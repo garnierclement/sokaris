@@ -33,8 +33,10 @@ namespace sokaris
         String path;
         String face_cascade_name;
         String eyes_cascade_name;
+		String mouth_cascade_name;
         CascadeClassifier face_cascade;
         CascadeClassifier eyes_cascade;
+		CascadeClassifier mouth_cascade;
         string window_name;
         RNG rng;
         
@@ -47,6 +49,7 @@ namespace sokaris
         int testCascadeClassifier();
         void detectAndDisplay(Mat frame);
 		void trainedClassifier();
+		void putSomeText(String text, Mat frame, Point point);
 		void read_csv(const string& filename, vector<Mat>& images, vector<int>& labels, char separator = ';');
         
     };

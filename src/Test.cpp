@@ -14,12 +14,13 @@ namespace sokaris
 {
     Test::Test()
     {
-        this->path = "/usr/local/Cellar/opencv/2.4.5/share/OpenCV/haarcascades/";
-		//this->path = "C:/Program Files (x86)/opencv/data/haarcascades/";
-		//this->face_cascade_name = "haarcascade_frontalface_alt.xml";
-        //this->eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
-		this->path = "C:/Program Files (x86)/opencv/data/lbpcascades/";
-		this->face_cascade_name = "lbpcascade_frontalface.xml";
+        //this->path = "/usr/local/Cellar/opencv/2.4.5/share/OpenCV/haarcascades/";
+		this->path = "C:/Program Files (x86)/opencv/data/haarcascades/";
+		this->face_cascade_name = "haarcascade_frontalface_alt.xml";
+        this->eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
+		this->mouth_cascade_name = "haarcascade_mcs_mouth.xml";
+		//this->path = "C:/Program Files (x86)/opencv/data/lbpcascades/";
+		//this->face_cascade_name = "lbpcascade_frontalface.xml";
         this->window_name = "Capture - Face detection";
         this->rng(1234);
     }
@@ -35,8 +36,9 @@ namespace sokaris
         
         //-- 1. Load the cascades
         if( !face_cascade.load( path+face_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
-       // if( !eyes_cascade.load( path+eyes_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
-        
+        if( !eyes_cascade.load( path+eyes_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
+        if( !mouth_cascade.load( path+mouth_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
+
         //-- 2. Read the video stream
         capture = cvCaptureFromCAM( -1 );
         if( capture )
@@ -72,36 +74,52 @@ namespace sokaris
         for( int i = 0; i < faces.size(); i++ )
         {
             Point center( faces[i].x + faces[i].width*0.5, faces[i].y + faces[i].height*0.5 );
-            ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
-            //rectangle(frame, center, Scalar(255, 0, 0), 1, 8, 0);
-			//rectangle( frame, center, center, Scalar( 0, 255, 255 ), 4, 8, 0 );
-			rectangle( frame, center, center, CV_RGB(0, 255,0), 1);
-			//rectangle(frame, faces[i].x, faces[i].y, CV_RGB(0, 255,0), 1);
+            ellipse( frame, center, Size( faces[i].width*0.5, faces[i].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );			rectangle( frame, center, center, CV_RGB(0, 255,0), 1);
             Mat faceROI = frame_gray( faces[i] );
             std::vector<Rect> eyes;
-            /*
+            std::vector<Rect> mouth;
+
             //-- In each face, detect eyes
             eyes_cascade.detectMultiScale( faceROI, eyes, 1.1, 2, 0 |CV_HAAR_SCALE_IMAGE, Size(30, 30) );
             
             for( int j = 0; j < eyes.size(); j++ )
             {
                 Point center( faces[i].x + eyes[j].x + eyes[j].width*0.5, faces[i].y + eyes[j].y + eyes[j].height*0.5 );
-				Point pt = center;
-				int thickness = -1;
-				int lineType = 8;
-				circle( frame, center, w/32.0, Scalar( 0, 0, 255 ), thickness, lineType );
-                int radius = cvRound( (eyes[j].width + eyes[j].height)*0.25 );
-				stringstream textImage("");
-				textImage << center;
-				putText(frame, textImage.str(), center, 1, 4.0, Scalar(50,50,50));
-                circle( frame, center, radius, Scalar( 255, 0, 0 ), 4, 8, 0 );
-				cout << center << endl;
+				rectangle(frame,    cvPoint(faces[i].x + eyes[j].x, faces[i].y + eyes[j].y),
+									cvPoint(faces[i].x + eyes[j].x + eyes[j].width ,faces[i].y + eyes[j].y + eyes[j].height),
+                                    CV_RGB(0, 0, 255),
+                                    1, 8, 0
+                                   );
             }
-			*/
+						
+			//-- In each face, detect mouth
+			//performFeatureDetection();
+             mouth_cascade.detectMultiScale( faceROI, mouth, 1.1, 2, 0 |CV_HAAR_SCALE_IMAGE, Size(30, 30) );
+            
+            for( int j = 0; j < 1 /*mouth.size()*/; j++ )
+            {
+                Point center( faces[i].x + mouth[j].x + mouth[j].width*0.5, faces[i].y + mouth[j].y + mouth[j].height*0.5 );
+				rectangle(frame,    cvPoint(faces[i].x + mouth[j].x, faces[i].y + mouth[j].y),
+									cvPoint(faces[i].x + mouth[j].x + mouth[j].width ,faces[i].y + mouth[j].y + mouth[j].height),
+                                    CV_RGB(225, 228, 0), //225, 228, 0
+                                    1, 8, 0
+                                   );
+            }
+			
         }
         //-- Show what you got
         imshow( window_name, frame );
     }
+
+	void Test::putSomeText(String text, Mat frame, Point point) {
+		stringstream textImage("");
+		textImage << text;
+		putText(frame, textImage.str(), point, 1, 4.0, Scalar(50,50,50));
+		cout << point << endl;
+	}
+
+	/*void Test::performFeatureDetection(){
+		}*/
 
 	void Test::trainedClassifier(){
 		

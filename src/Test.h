@@ -51,6 +51,12 @@ namespace sokaris
 		void trainedClassifier();
 		void putSomeText(String text, Mat frame, Point point);
 		void read_csv(const string& filename, vector<Mat>& images, vector<int>& labels, char separator = ';');
+		void performFeatureDetection( std::vector<Rect> feature, 
+										std::vector<Rect> faces, 
+										cv::Mat faceROI, 
+										cv::CascadeClassifier feature_cascade,
+										cv::Mat frame,
+										int i);
         
     };
 }

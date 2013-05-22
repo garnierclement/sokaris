@@ -69,6 +69,9 @@ namespace sokaris
         equalizeHist( frame_gray, frame_gray );
         
         //-- Detect faces
+		//-- Calculate the face orientation and give it as a parameter to the new object person
+		//-- Create a new person for each face detected
+		//-- For each person detected, store information about that person in a database or something similar
         face_cascade.detectMultiScale( frame_gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
         
         for( int i = 0; i < faces.size(); i++ )
@@ -93,19 +96,7 @@ namespace sokaris
             }
 						
 			//-- In each face, detect mouth
-			//performFeatureDetection();
-             mouth_cascade.detectMultiScale( faceROI, mouth, 1.1, 2, 0 |CV_HAAR_SCALE_IMAGE, Size(30, 30) );
-            
-            for( int j = 0; j < 1 /*mouth.size()*/; j++ )
-            {
-                Point center( faces[i].x + mouth[j].x + mouth[j].width*0.5, faces[i].y + mouth[j].y + mouth[j].height*0.5 );
-				rectangle(frame,    cvPoint(faces[i].x + mouth[j].x, faces[i].y + mouth[j].y),
-									cvPoint(faces[i].x + mouth[j].x + mouth[j].width ,faces[i].y + mouth[j].y + mouth[j].height),
-                                    CV_RGB(225, 228, 0), //225, 228, 0
-                                    1, 8, 0
-                                   );
-            }
-			
+			performFeatureDetection( mouth, faces, faceROI, mouth_cascade, frame, i);
         }
         //-- Show what you got
         imshow( window_name, frame );
@@ -118,8 +109,23 @@ namespace sokaris
 		cout << point << endl;
 	}
 
-	/*void Test::performFeatureDetection(){
-		}*/
+	void Test::performFeatureDetection( std::vector<Rect> feature, 
+										std::vector<Rect> faces, 
+										cv::Mat faceROI, 
+										cv::CascadeClassifier feature_cascade,
+										cv::Mat frame, int i){
+		 feature_cascade.detectMultiScale( faceROI, feature, 1.1, 2, 0 |CV_HAAR_SCALE_IMAGE, Size(30, 30) );
+            
+            for( int j = 0; j < 1 /*mouth.size()*/; j++ )
+            {
+                Point center( faces[i].x + feature[j].x + feature[j].width*0.5, faces[i].y + feature[j].y + feature[j].height*0.5 );
+				rectangle(frame,    cvPoint(faces[i].x + feature[j].x, faces[i].y + feature[j].y),
+									cvPoint(faces[i].x + feature[j].x + feature[j].width ,faces[i].y + feature[j].y + feature[j].height),
+                                    CV_RGB(225, 228, 0), //225, 228, 0
+                                    1, 8, 0
+                                   );
+            }
+		}
 
 	void Test::trainedClassifier(){
 		

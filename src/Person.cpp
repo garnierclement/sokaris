@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 AKH Partners. All rights reserved.
 //
 //Rev 1.0 : The aim of this class is to create an object person that will allow us 
-//          to track a person between consecutives images.
+//          to track a person in consecutive images.
 //
 
 #include "Person.h"

@@ -33,6 +33,7 @@ namespace sokaris
     {
         CvCapture* capture;
         Mat frame;
+		Mat frame_original;
         
         //-- 1. Load the cascades
         if( !face_cascade.load( path+face_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
@@ -45,8 +46,8 @@ namespace sokaris
         {
             while( true )
             {
-                frame = cvQueryFrame( capture );
-                
+                frame_original = cvQueryFrame( capture );
+                frame = frame_original.clone();
                 //-- 3. Apply the classifier to the frame
                 if( !frame.empty() )
                 { detectAndDisplay( frame ); }

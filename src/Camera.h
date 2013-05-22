@@ -10,29 +10,40 @@
 #define __sokaris__Camera__
 
 #include <iostream>
+#include <string>
+#include <vector>
 #include <opencv2/opencv.hpp>
 
 using namespace cv;
+using namespace std;
 
 namespace sokaris
 {
-    class Camera
+	class Camera
     {
     private :
-        Point3d coordinates;        // Coordonnées de la caméra, avec Hauteur de la caméra
-        float angleX;               // Angle de vue de la caméra
-		float angleY;
-		float angleZ;
+		int id;						// Identification unique pour chaque caméra
+        Point3d position;			// Coordonnées de la caméra, avec Hauteur de la caméra
+        vector<float> angles;       // Angle de vue de la caméra
         int framerate;              // Nombre d'image par seconde
+		string format;
+		float timestamp;
         
     public:
         Camera(void);
-        Camera(Point3d coordinates);
+        Camera(int id, Point3d position, float angleX, float angleY, 
+			float angleZ, int framerate, string format, float timestamp);
         ~Camera(void);
         
-        Point3d getCoordinates();
-        void setCoordinates(Point3d point);
-        
+        int getId();
+		Point3d getPosition();
+		vector<float> getAngles();
+		int getFramerate();
+		string getFormat();
+		float getTimestamp();
+
+        void setPosition(Point3d point);
+		void setAngles(vector<float> a);
 
     };
 }

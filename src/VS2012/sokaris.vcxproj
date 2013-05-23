@@ -66,8 +66,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Camera.cpp" />
+    <ClCompile Include="..\findEyeCenter.cpp" />
+    <ClCompile Include="..\findEyeCorner.cpp" />
     <ClCompile Include="..\Flux.cpp" />
     <ClCompile Include="..\Gaze.cpp" />
+    <ClCompile Include="..\helpers.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\Map.cpp" />
     <ClCompile Include="..\test2.cpp" />
@@ -78,9 +81,13 @@
     <ClCompile Include="..\test3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\eyeLike\src\constants.h" />
     <ClInclude Include="..\Camera.h" />
+    <ClInclude Include="..\findEyeCenter.h" />
+    <ClInclude Include="..\findEyeCorner.h" />
     <ClInclude Include="..\Flux.h" />
     <ClInclude Include="..\Gaze.h" />
+    <ClInclude Include="..\helpers.h" />
     <ClInclude Include="..\Map.h" />
     <ClInclude Include="..\Person.h" />
     <ClInclude Include="..\Picture.h" />

@@ -38,6 +38,8 @@ namespace sokaris
         CascadeClassifier eyes_cascade;
 		CascadeClassifier mouth_cascade;
         string window_name;
+		string main_window_name;
+		string face_window_name;
         RNG rng;
         
     public :
@@ -57,6 +59,7 @@ namespace sokaris
 										cv::CascadeClassifier feature_cascade,
 										cv::Mat frame,
 										int i);
+		void findEyes(cv::Mat frame_gray, cv::Rect face);
         
     };
 }

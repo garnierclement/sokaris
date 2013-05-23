@@ -106,7 +106,7 @@ namespace sokaris
 	void Test::putSomeText(String text, Mat frame, Point point) {
 		stringstream textImage("");
 		textImage << text;
-		putText(frame, textImage.str(), point, 1, 4.0, Scalar(50,50,50));
+		putText(frame, textImage.str(),Point(100,400), 1, 1.0, Scalar(50,50,50));
 		cout << point << endl;
 	}
 
@@ -120,11 +120,13 @@ namespace sokaris
             for( int j = 0; j < 1 /*mouth.size()*/; j++ )
             {
                 Point center( faces[i].x + feature[j].x + feature[j].width*0.5, faces[i].y + feature[j].y + feature[j].height*0.5 );
+				Point corner = cvPoint(faces[i].x + feature[j].x + feature[j].width ,faces[i].y + feature[j].y + feature[j].height);
 				rectangle(frame,    cvPoint(faces[i].x + feature[j].x, faces[i].y + feature[j].y),
 									cvPoint(faces[i].x + feature[j].x + feature[j].width ,faces[i].y + feature[j].y + feature[j].height),
                                     CV_RGB(225, 228, 0), //225, 228, 0
                                     1, 8, 0
                                    );
+				putSomeText("Mouth detected",frame, corner);
             }
 		}
 

@@ -88,7 +88,11 @@
     <ClInclude Include="..\Test.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\samples.csv" />
+    <None Include="..\samples2.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\bg.txt" />
+    <Text Include="..\info.dat" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

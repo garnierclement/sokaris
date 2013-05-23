@@ -14,8 +14,11 @@ namespace sokaris
 {
     Test::Test()
     {
-        //this->path = "/usr/local/Cellar/opencv/2.4.5/share/OpenCV/haarcascades/";
+#ifdef __APPLE__
+        this->path = "/usr/local/Cellar/opencv/2.4.5/share/OpenCV/haarcascades/";
+#else
 		this->path = "C:/Program Files (x86)/opencv/data/haarcascades/";
+#endif
 		this->face_cascade_name = "haarcascade_frontalface_alt.xml";
         this->eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
 		this->mouth_cascade_name = "haarcascade_mcs_mouth.xml";

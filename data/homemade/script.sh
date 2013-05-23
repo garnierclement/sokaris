@@ -4,7 +4,6 @@ echo "Training"
 
 mkdir negative			# folder with negative images
 mkdir positive			# folder with positive images
-#mkdir samples			# folder with generated samples
 
 read -p "Did you put samples in negative folder ? (y/n)" -n 1 -r
 echo ""
@@ -25,6 +24,5 @@ then
 fi
 
 rm out.vec
-
 opencv_createsamples -vec out.vec -info info.dat -bg bg.txt
 

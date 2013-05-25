@@ -24,5 +24,5 @@ then
 fi
 
 rm out.vec
-opencv_createsamples -vec out.vec -info info.dat -bg bg.txt
+opencv_createsamples -vec out.vec -info info.dat -bg bg.txt $*
 

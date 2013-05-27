@@ -19,7 +19,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/ml/ml.hpp>
-#include "opencv2/contrib/contrib.hpp"
+#include <opencv2/contrib/contrib.hpp>
 
 using namespace std;
 using namespace cv;

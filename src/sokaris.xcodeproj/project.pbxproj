@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5780D61F17535EAC00CA8B89 /* findEyeCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5780D61A17535A2400CA8B89 /* findEyeCenter.cpp */; };
+		5780D62017535EB000CA8B89 /* findEyeCorner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5780D61C17535A2400CA8B89 /* findEyeCorner.cpp */; };
+		5780D62317535EF700CA8B89 /* helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5780D62117535EF700CA8B89 /* helpers.cpp */; };
 		57D5276F17383F4100A31CE3 /* sokaris.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 57D5276E17383F4100A31CE3 /* sokaris.1 */; };
 		57D5277617383FEB00A31CE3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D5277517383FEB00A31CE3 /* main.cpp */; };
 		57D52779173840E400A31CE3 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D52777173840E400A31CE3 /* Map.cpp */; };
@@ -54,6 +57,9 @@
 		5780D61B17535A2400CA8B89 /* findEyeCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = findEyeCenter.h; sourceTree = SOURCE_ROOT; };
 		5780D61C17535A2400CA8B89 /* findEyeCorner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = findEyeCorner.cpp; sourceTree = SOURCE_ROOT; };
 		5780D61D17535A2400CA8B89 /* findEyeCorner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = findEyeCorner.h; sourceTree = SOURCE_ROOT; };
+		5780D61E17535CBE00CA8B89 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = SOURCE_ROOT; };
+		5780D62117535EF700CA8B89 /* helpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = helpers.cpp; sourceTree = SOURCE_ROOT; };
+		5780D62217535EF700CA8B89 /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = SOURCE_ROOT; };
 		57D5276917383F4100A31CE3 /* sokaris */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sokaris; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D5276E17383F4100A31CE3 /* sokaris.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = sokaris.1; sourceTree = SOURCE_ROOT; };
 		57D5277517383FEB00A31CE3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
@@ -170,6 +176,9 @@
 				5780D61B17535A2400CA8B89 /* findEyeCenter.h */,
 				5780D61C17535A2400CA8B89 /* findEyeCorner.cpp */,
 				5780D61D17535A2400CA8B89 /* findEyeCorner.h */,
+				5780D62117535EF700CA8B89 /* helpers.cpp */,
+				5780D62217535EF700CA8B89 /* helpers.h */,
+				5780D61E17535CBE00CA8B89 /* constants.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -274,6 +283,9 @@
 				57D527891738468900A31CE3 /* Gaze.cpp in Sources */,
 				57D5278C173846C700A31CE3 /* Process.cpp in Sources */,
 				57D5278F173846E300A31CE3 /* Test.cpp in Sources */,
+				5780D61F17535EAC00CA8B89 /* findEyeCenter.cpp in Sources */,
+				5780D62017535EB000CA8B89 /* findEyeCorner.cpp in Sources */,
+				5780D62317535EF700CA8B89 /* helpers.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

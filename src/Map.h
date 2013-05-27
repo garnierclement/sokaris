@@ -8,11 +8,13 @@
 #include <opencv2/core/core.hpp>
 
 #include "Camera.h"
+#include "Gaze.h"
 
 namespace sokaris
 {
-	struct MapPoint{
+	struct Plane{
 		Point3d point;							// Point pour définir la terre
+		Point3d angles;					// Angles de rotation
 		double height;							// Hauteur de la mur
 												//  (longueur pour les structures plutôt horizontales)
 		double width;							// Largeur jusqu'au plafond
@@ -22,17 +24,16 @@ namespace sokaris
 	{
 	private :
 		vector<Camera*> listOfCameras;			// Liste des caméras dans le plan
-		vector<MapPoint*> listOfCoordinates;	// Liste des points cruciaux pour le modèle 3D
+		vector<Plane*> listPlane;			// Liste des plans pour le modèle 3D
+		vector<Gaze*> listGazes;				// Liste des regards
 
 	public :
 		Map(void);
 		~Map(void);
 
-		int getCoordinates(string filename);	// Depuis un fichier xml
-		int setCoordinates(vector<MapPoint*> listCoordinates, string filename);
-												// Stocker dans un fichier xml
-		int getCameras(string filename);		// Depuis un fichier xml
-		int setCameras(vector<Camera*> listCoordinates, string filename);
+		int getMapFromFile(string filename);	// Depuis un fichier xml
+		int outputResultToFile(string filename, double angleX_observator, 
+			double angleY_observator, double angleZ_observator);
 												// Stocker dans un fichier xml
 
 		/// <summary>
@@ -47,9 +48,9 @@ namespace sokaris
 		/// <param name="lineVector">Vecteur qui représente l'orientation du rayon</param>
 		/// <param name="linePoint">Un point parcouru par le rayon incident</param>
 		/// <returns>Point d'intersection</returns>
-		vector<double> calculIntersection(
-			vector<double> planeVector, vector<double> planePoint, 
-			vector<double> lineVector, vector<double> linePoint);
+		Point3d Map::calculIntersection(
+			Point3d planeVector, Point3d planePoint, 
+			Point3d lineVector, Point3d linePoint);
 
 		/// <summary>
 		/// Pour écrire le modèle final dans un fichier DAE(XML)

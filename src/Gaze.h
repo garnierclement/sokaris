@@ -14,7 +14,7 @@ namespace sokaris
 	{
 	private : 
 		Point3d position;
-		vector<double> angles;
+		Point3d angles;
 
 	public :
 		Gaze(void);
@@ -25,7 +25,7 @@ namespace sokaris
 
 		/* Récupération d'info */
 		Point3d getPosition();
-		vector<double> getAngles();
+		Point3d getAngles();
 	};
 }
 

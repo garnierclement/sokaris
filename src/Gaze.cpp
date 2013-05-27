@@ -9,8 +9,7 @@ namespace sokaris
 		double angleX, double angleY, double angleZ)
 	{
 		this->position = Point3d(posX,posY,posZ);
-		double angles[] = {angleX,angleY,angleZ};
-		this->angles.assign (angles,angles+3);
+		this->angles = Point3d(angleX,angleY,angleZ);
 	}
 
 	Gaze::~Gaze(void){
@@ -20,7 +19,7 @@ namespace sokaris
 		return this->position;
 	}
 
-	vector<double> Gaze::getAngles(){
+	Point3d Gaze::getAngles(){
 		return this->angles;
 	}
 

@@ -16,7 +16,7 @@ namespace sokaris
     private :
 		int id;						// Identification unique pour chaque caméra
         Point3d position;			// Coordonnées de la caméra, avec Hauteur de la caméra
-        vector<double> angles;       // Angle de vue de la caméra
+        Point3d angles;				// Angle de vue de la caméra
         int framerate;              // Nombre d'image par seconde
 		string format;
 		double timestamp;
@@ -32,14 +32,14 @@ namespace sokaris
 		/* Récupération d'info */
         int getId();
 		Point3d getPosition();
-		vector<double> getAngles();
+		Point3d getAngles();
 		int getFramerate();
 		string getFormat();
 		double getTimestamp();
 
 		/* Modification d'info */
         void setPosition(Point3d point);
-		void setAngles(vector<double> a);
+		void setAngles(Point3d a);
 
     };
 }

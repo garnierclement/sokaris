@@ -11,8 +11,7 @@ namespace sokaris
 	{
 		this->id = id;
 		this->position = Point3d(posX,posY,posZ);
-		double angles[] = {angleX,angleY,angleZ};
-		this->angles.assign (angles,angles+3);
+		this->angles = Point3d(angleX,angleY,angleZ);
 		this->framerate = framerate;
 		this->format.assign(format);
 		this->timestamp = timestamp;
@@ -29,7 +28,7 @@ namespace sokaris
 		return this->position;
 	}
 
-	vector<double> Camera::getAngles(){
+	Point3d Camera::getAngles(){
 		return this->angles;
 	}
 
@@ -50,11 +49,7 @@ namespace sokaris
 		this->position = point;
 	}
 
-	void Camera::setAngles(vector<double> a){
-		if(a.size()!=3)
-			cout << "Invalid parameter";
-		else if(this->angles.size()!=3)
-			this->angles.resize(3);
-		else this->angles.swap(a);
+	void Camera::setAngles(Point3d a){
+		this->angles = a;
 	}
 }

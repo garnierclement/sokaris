@@ -21,7 +21,8 @@ namespace sokaris
 		~Gaze(void);
 
 		/* Création avec paramètres */
-		Gaze(Point3d position, double angleX, double angleY, double angleZ);
+		Gaze::Gaze(double posX, double posY, double posZ, 
+		double angleX, double angleY, double angleZ);
 
 		/* Récupération d'info */
 		Point3d getPosition();

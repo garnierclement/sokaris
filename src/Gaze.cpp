@@ -5,9 +5,10 @@ namespace sokaris
 	{
 	}
 
-	Gaze::Gaze(Point3d position, double angleX, double angleY, double angleZ)
+	Gaze::Gaze(double posX, double posY, double posZ, 
+		double angleX, double angleY, double angleZ)
 	{
-		this->position = position;
+		this->position = Point3d(posX,posY,posZ);
 		double angles[] = {angleX,angleY,angleZ};
 		this->angles.assign (angles,angles+3);
 	}

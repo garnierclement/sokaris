@@ -13,15 +13,16 @@ namespace sokaris
 {
 	struct MapPoint{
 		Point3d point;							// Point pour définir la terre
-		double height;							// Hauteur jusqu'au plafond
-		Point3d* next;							// Pour lier au prochain point
+		double height;							// Hauteur de la mur
+												//  (longueur pour les structures plutôt horizontales)
+		double width;							// Largeur jusqu'au plafond
 	};
 
 	class Map
 	{
 	private :
 		vector<Camera*> listOfCameras;			// Liste des caméras dans le plan
-		vector<MapPoint*> listOfCoordinates;		// Liste des points cruciaux pour le modèle 3D
+		vector<MapPoint*> listOfCoordinates;	// Liste des points cruciaux pour le modèle 3D
 
 	public :
 		Map(void);

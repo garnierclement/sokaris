@@ -62,7 +62,7 @@ namespace sokaris
             }
             else if (!strcmp(argv[i], "-view"))
             {
-                cout << "Not implemented yet" << endl;
+                view(video);
             }
             else if (!strcmp(argv[i], "-o") || !strcmp(argv[i], "--output"))
             {
@@ -97,6 +97,49 @@ namespace sokaris
     {
         Flux fl("/Users/garnierclement/Desktop/","test.mp4");
         fl.display(true, Process::testCallback);
+    }
+    
+    void Interface::view(string filename)
+    {
+        VideoCapture video;
+        int c1;
+        int waiting = 0;
+        
+        if (!filename.compare(""))
+            video.open(0);
+        else
+            video.open(filename);
+        
+        if (!video.isOpened()) {
+            cout << "Unable to open video" << endl;
+            return;
+        }
+        
+        namedWindow("view", CV_WINDOW_AUTOSIZE);
+        
+        Mat picture;
+        
+        while (1)
+        {
+            video >> picture;
+            imshow("view", picture);
+            
+            c1 = waitKey(waiting);
+            
+            if (c1 == 'q') {
+                // exit the loop
+                break;
+            }
+            else if (c1 == 'p') {
+                cout << "apply process" << endl;
+            }
+            else if (c1 == 's') {
+                waiting = (waiting == 0) ? 10 : 0;
+                cout << waiting << endl;
+            }
+        }
+        
+        destroyWindow("view");
     }
 
 }

@@ -30,6 +30,7 @@ namespace sokaris
         // Différents tests
         static void testArthur();
         static void testClement();
+        static void view(string filename = "");
     };
 }
 

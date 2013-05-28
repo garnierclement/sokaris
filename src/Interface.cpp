@@ -35,24 +35,29 @@ namespace sokaris
         {
             if (!strcmp(argv[i], "-data"))
             {
-                if (++i < argc)
+                if (i+1 < argc)
                     data = argv[++i];
+                else
+                    cout << "Argument -data needs a value" << endl;
             }
             else if (!strcmp(argv[i], "-video"))
             {
-                if (++i < argc)
+                if (i+1 < argc)
                     video = argv[++i];
+                else
+                    cout << "Argument -video needs a value" << endl;
             }
             else if (!strcmp(argv[i], "-test"))
             {
-                if (++i < argc)
+                if (i+1 < argc)
                     test = atoi(argv[++i]);
                 
                 if (test == 0)
                     testArthur();
-                
                 else if (test == 1)
                     testClement();
+                else
+                    cout << "Unkown test : " << argv[i] << endl;
             }
             else if (!strcmp(argv[i], "-o") || !strcmp(argv[i], "--output"))
             {

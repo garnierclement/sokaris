@@ -17,6 +17,7 @@ namespace sokaris
         cout << "\t-data <path_to_data>" << endl;
         cout << "\t-video <path_to_video>" << endl;
         cout << "\t-test <number_of_test> default is 0" << endl;
+        cout << "\t-view" << endl;
         cout << "\t-o or --output <filename>" << endl;
         cout << "\t-h or --help to display this message" << endl;
         // cout << "\t-command <param>" << endl;
@@ -58,6 +59,10 @@ namespace sokaris
                     testClement();
                 else
                     cout << "Unkown test : " << argv[i] << endl;
+            }
+            else if (!strcmp(argv[i], "-view"))
+            {
+                cout << "Not implemented yet" << endl;
             }
             else if (!strcmp(argv[i], "-o") || !strcmp(argv[i], "--output"))
             {

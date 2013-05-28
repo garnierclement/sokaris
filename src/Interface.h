@@ -13,6 +13,10 @@
 #include <sstream>
 #include <map>
 
+#include "Process.h"
+#include "Flux.h"
+#include "Test.h"
+
 using namespace std;
 
 namespace sokaris
@@ -22,6 +26,10 @@ namespace sokaris
     public :
         static void parseArguments(int argc, const char ** argv);
         static void usage();
+        
+        // Différents tests
+        static void testArthur();
+        static void testClement();
     };
 }
 

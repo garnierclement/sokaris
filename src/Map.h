@@ -48,7 +48,7 @@ namespace sokaris
 		/// <param name="lineVector">Vecteur qui représente l'orientation du rayon</param>
 		/// <param name="linePoint">Un point parcouru par le rayon incident</param>
 		/// <returns>Point d'intersection</returns>
-		Point3d Map::calculIntersection(
+		Point3d calculIntersection(
 			Point3d planeVector, Point3d planePoint, 
 			Point3d lineVector, Point3d linePoint);
 

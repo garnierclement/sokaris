@@ -71,6 +71,7 @@
     <ClCompile Include="..\Flux.cpp" />
     <ClCompile Include="..\Gaze.cpp" />
     <ClCompile Include="..\helpers.cpp" />
+    <ClCompile Include="..\Interface.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\Map.cpp" />
     <ClCompile Include="..\test2.cpp" />
@@ -88,6 +89,7 @@
     <ClInclude Include="..\Flux.h" />
     <ClInclude Include="..\Gaze.h" />
     <ClInclude Include="..\helpers.h" />
+    <ClInclude Include="..\Interface.h" />
     <ClInclude Include="..\Map.h" />
     <ClInclude Include="..\Person.h" />
     <ClInclude Include="..\Picture.h" />

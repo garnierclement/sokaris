@@ -18,6 +18,7 @@
 #include "Gaze.h"
 #include "Process.h"
 #include "Test.h"
+#include "Interface.h"
 
 using namespace std;
 using namespace cv;
@@ -26,7 +27,7 @@ using namespace sokaris;
 
 int main(int argc, const char * argv[])
 {
-    cout << "Welcome on Sokaris!\n";
+    Interface::parseArguments(argc, argv);
 
 	Test *t = new Test();
     t->testCascadeClassifier();

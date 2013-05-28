@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5705A537175531930011F689 /* Interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5705A535175531930011F689 /* Interface.cpp */; };
 		5780D61F17535EAC00CA8B89 /* findEyeCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5780D61A17535A2400CA8B89 /* findEyeCenter.cpp */; };
 		5780D62017535EB000CA8B89 /* findEyeCorner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5780D61C17535A2400CA8B89 /* findEyeCorner.cpp */; };
 		5780D62317535EF700CA8B89 /* helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5780D62117535EF700CA8B89 /* helpers.cpp */; };
@@ -53,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5705A535175531930011F689 /* Interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Interface.cpp; sourceTree = SOURCE_ROOT; };
+		5705A536175531930011F689 /* Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interface.h; sourceTree = SOURCE_ROOT; };
 		5780D61A17535A2400CA8B89 /* findEyeCenter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = findEyeCenter.cpp; sourceTree = SOURCE_ROOT; };
 		5780D61B17535A2400CA8B89 /* findEyeCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = findEyeCenter.h; sourceTree = SOURCE_ROOT; };
 		5780D61C17535A2400CA8B89 /* findEyeCorner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = findEyeCorner.cpp; sourceTree = SOURCE_ROOT; };
@@ -156,6 +159,8 @@
 		57D5277A173842F600A31CE3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5705A535175531930011F689 /* Interface.cpp */,
+				5705A536175531930011F689 /* Interface.h */,
 				57D52777173840E400A31CE3 /* Map.cpp */,
 				57D52778173840E400A31CE3 /* Map.h */,
 				57D5277B1738434400A31CE3 /* Camera.cpp */,
@@ -286,6 +291,7 @@
 				5780D61F17535EAC00CA8B89 /* findEyeCenter.cpp in Sources */,
 				5780D62017535EB000CA8B89 /* findEyeCorner.cpp in Sources */,
 				5780D62317535EF700CA8B89 /* helpers.cpp in Sources */,
+				5705A537175531930011F689 /* Interface.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

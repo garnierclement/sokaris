@@ -17,9 +17,9 @@ namespace sokaris
         cout << "\t-data <path_to_data>" << endl;
         cout << "\t-video <path_to_video>" << endl;
         cout << "\t-test <number_of_test> default is 0" << endl;
-        cout << "\t-view" << endl;
+        cout << "\t-view" << " ('space' for a new image, 'p' to process, 'q' to quit, 's' to switch to video mode)" << endl;
         cout << "\t-o or --output <filename>" << endl;
-        cout << "\t-h or --help to display this message" << endl;
+        cout << "\t-h or --help to display help message" << endl;
         // cout << "\t-command <param>" << endl;
         cout << endl;
     }
@@ -135,7 +135,6 @@ namespace sokaris
             }
             else if (c1 == 's') {
                 waiting = (waiting == 0) ? 10 : 0;
-                cout << waiting << endl;
             }
         }
         

@@ -9,7 +9,6 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
-#include "Map.h"
 #include "Camera.h"
 #include "Flux.h"
 #include "Process.h"

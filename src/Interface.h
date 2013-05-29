@@ -13,6 +13,7 @@
 #include <sstream>
 #include <map>
 
+#include "Map.h"
 #include "Process.h"
 #include "Flux.h"
 #include "Test.h"

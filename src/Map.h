@@ -9,6 +9,7 @@
 
 #include "Camera.h"
 #include "Gaze.h"
+#include "tinyxml.h"
 
 namespace sokaris
 {

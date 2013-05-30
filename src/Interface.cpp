@@ -99,6 +99,11 @@ namespace sokaris
         fl.display(true, Process::testCallback);
     }
     
+    void Interface::testMapWriting(string filename)
+    {
+        
+    }
+    
     void Interface::view(string filename)
     {
         VideoCapture video;

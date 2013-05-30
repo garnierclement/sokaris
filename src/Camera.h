@@ -42,7 +42,7 @@ namespace sokaris
 		void setAngles(Point3d a);
 
 		/* Conversion depuis string */
-		int Camera::setFromString(string strSrc);
+		int setFromString(string strSrc);
     };
 }
 

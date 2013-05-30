@@ -32,15 +32,15 @@ namespace sokaris
 		Map(void);
 		~Map(void);
 
-		int Map::getListCamerasSize();
-		int Map::getListPlanesSize();
-		int Map::getListGazesSize();
+		int getListCamerasSize();
+		int getListPlanesSize();
+		int getListGazesSize();
 
-		int Map::readCamerasFromFile(string filename);	
+		int readCamerasFromFile(string filename);	
 												// fichier ==> vector
-		int Map::readGazesFromFile(string filename);	
+		int readGazesFromFile(string filename);	
 												// fichier ==> vector
-		int Map::readPlanesFromFile(string filename);	
+		int readPlanesFromFile(string filename);	
 												// fichier ==> vector
 		
 		/// <summary>

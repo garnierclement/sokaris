@@ -25,13 +25,14 @@ namespace sokaris
 
 
 	/* Sortie du modèle 3D final */
-	int Map::writeResultToFile(string filename, double angleX_observator, 
+	int Map::writeResultToFile(string filename, double energy, double posX_observator, 
+		double posY_observator, double posZ_observator, double angleX_observator, 
 		double angleY_observator, double angleZ_observator)
 	{
 		int number_Spot = this->listGazes.size();
 		int number_Plane = this->listPlanes.size();
 		int i=0;
-		ofstream fs(filename.c_str());
+		ofstream fs(filename);
 		fs << "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
 		fs << "<COLLADA xmlns=\"http://www.collada.org/2005/11/COLLADASchema\" version=\"1.4.1\">\n";
 		fs << "  <asset>\n";
@@ -45,7 +46,7 @@ namespace sokaris
 		fs << "    <up_axis>Z_UP</up_axis>\n";
 		fs << "  </asset>\n";
 		fs << "  <library_cameras>\n";
-		fs << "    <camera id=\"Camera-camera\" name=\"Observateur\">\n";
+		fs << "    <camera id=\"Camera-camera\" name=\"Observator\">\n";
 		fs << "      <optics>\n";
 		fs << "        <technique_common>\n";
 		fs << "          <perspective>\n";
@@ -76,7 +77,7 @@ namespace sokaris
 			fs << "          <clipend>40</clipend>\n";
 			fs << "          <clipsta>0.5</clipsta>\n";
 			fs << "          <dist sid=\"blender_dist\">25</dist>\n";
-			fs << "          <energy sid=\"blender_energy\">0.1</energy>\n";
+			fs << "          <energy sid=\"blender_energy\">"<<energy<<"</energy>\n";
 			fs << "          <falloff_type>0</falloff_type>\n";
 			fs << "          <spotblend>0.15</spotblend>\n";
 			fs << "          <spotsize>15</spotsize>\n";
@@ -130,8 +131,8 @@ namespace sokaris
 		fs << "  <library_controllers/>\n";
 		fs << "  <library_visual_scenes>\n";
 		fs << "    <visual_scene id=\"Scene\" name=\"Scene\">\n";
-		fs << "      <node id=\"Camera\" name=\"Camera\" type=\"NODE\">\n";
-		fs << "        <translate sid=\"location\">17.11059 16.52051 18.54392</translate>\n";
+		fs << "      <node id=\"Camera\" name=\"Observator\" type=\"NODE\">\n";
+		fs << "        <translate sid=\"location\">"<<posX_observator<<" "<<posY_observator<<" "<<posZ_observator<<"</translate>\n";
 		fs << "        <rotate sid=\"rotationZ\">0 0 1 "<<angleZ_observator<<"</rotate>\n";
 		fs << "        <rotate sid=\"rotationY\">0 1 0 "<<angleY_observator<<"</rotate>\n";
 		fs << "        <rotate sid=\"rotationX\">1 0 0 "<<angleX_observator<<"</rotate>\n";
@@ -213,12 +214,10 @@ namespace sokaris
 	}
 
 	int Map::readPlanesFromFile(string filename){
-
+		// TODO
 		return 0;
 	}
-
-
-	/* Fonctions de calcul */
+	
 	Point3d Map::calculIntersection(
 		Point3d planeVector, Point3d planePoint, 
 		Point3d lineVector, Point3d linePoint){

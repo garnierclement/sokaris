@@ -36,27 +36,32 @@ namespace sokaris
 		int getListPlanesSize();
 		int getListGazesSize();
 
-		int readCamerasFromFile(string filename);	
-												// fichier ==> vector
-		int readGazesFromFile(string filename);	
-												// fichier ==> vector
-		int readPlanesFromFile(string filename);	
-												// fichier ==> vector
+		/* Chargement des données depuis fichiers */
+		/// <returns>0 si OK, sinon -1</returns>
+		int readCamerasFromFile(string filename);
+		/// <returns>0 si OK, sinon -1</returns>
+		int readGazesFromFile(string filename);
+		/// <returns>0 si OK, sinon -1</returns>
+		int readPlanesFromFile(string filename);
 		
+
+
+		/* Ecriture de fichier 3D */
 		/// <summary>
 		/// Pour écrire le modèle final dans un fichier DAE(XML)
 		/// </summary>
 		/// <returns>0 si OK, sinon -1</returns>
-		int writeResultToFile(string filename, double angleX_observator, 
-			double angleY_observator, double angleZ_observator);
-												// Stocker dans un fichier xml
+		int writeResultToFile(string filename, double energy, double posX_observator, 
+		double posY_observator, double posZ_observator, double angleX_observator, 
+		double angleY_observator, double angleZ_observator);
 
+
+
+		/* Fonctions de calcul */
 		/// <summary>
 		/// Pour calculer le point d'intersection entre un plan et
 		/// un rayon incident(d'un vecteur de regard).
 		/// C'est-à-dire le point du regard projeté sur la mur.
-		/// C'est pour harmoniser les zones de l'environnement
-		/// afin de mieux représenter.
 		/// </summary>
 		/// <param name="planeVector">Ligne normale du plan</param>
 		/// <param name="planePoint">Un point parcouru par le plan</param>
@@ -66,9 +71,7 @@ namespace sokaris
 		Point3d calculIntersection(
 			Point3d planeVector, Point3d planePoint, 
 			Point3d lineVector, Point3d linePoint);
-
 	};
-
 }
 
 #endif /* defined(__sokaris__Map__) */

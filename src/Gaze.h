@@ -34,7 +34,7 @@ namespace sokaris
 		void setAngles(Point3d ang);
 
 		/* Conversion depuis string */
-		int Gaze::setFromString(string strSrc);
+		int setFromString(string strSrc);
 
 	};
 }

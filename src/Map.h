@@ -2,6 +2,7 @@
 #define __sokaris__Map__
 
 #include <iostream>
+#include <ostream>
 #include <fstream>
 #include <string>
 #include <opencv2/opencv.hpp>
@@ -9,13 +10,12 @@
 
 #include "Camera.h"
 #include "Gaze.h"
-#include "tinyxml.h"
 
 namespace sokaris
 {
 	struct Plane{
 		Point3d point;							// Point pour définir la terre
-		Point3d angles;					// Angles de rotation
+		Point3d angles;							// Angles de rotation
 		double height;							// Hauteur de la mur
 												//  (longueur pour les structures plutôt horizontales)
 		double width;							// Largeur jusqu'au plafond
@@ -24,16 +24,30 @@ namespace sokaris
 	class Map
 	{
 	private :
-		vector<Camera*> listOfCameras;			// Liste des caméras dans le plan
-		vector<Plane*> listPlane;			// Liste des plans pour le modèle 3D
+		vector<Camera*> listCameras;			// Liste des caméras dans le plan
+		vector<Plane*> listPlanes;			// Liste des plans pour le modèle 3D
 		vector<Gaze*> listGazes;				// Liste des regards
 
 	public :
 		Map(void);
 		~Map(void);
 
-		int getMapFromFile(string filename);	// Depuis un fichier xml
-		int outputResultToFile(string filename, double angleX_observator, 
+		int Map::getListCamerasSize();
+		int Map::getListPlanesSize();
+		int Map::getListGazesSize();
+
+		int Map::readCamerasFromFile(string filename);	
+												// fichier ==> vector
+		int Map::readGazesFromFile(string filename);	
+												// fichier ==> vector
+		int Map::readPlanesFromFile(string filename);	
+												// fichier ==> vector
+		
+		/// <summary>
+		/// Pour écrire le modèle final dans un fichier DAE(XML)
+		/// </summary>
+		/// <returns>0 si OK, sinon -1</returns>
+		int writeResultToFile(string filename, double angleX_observator, 
 			double angleY_observator, double angleZ_observator);
 												// Stocker dans un fichier xml
 
@@ -52,12 +66,6 @@ namespace sokaris
 		Point3d calculIntersection(
 			Point3d planeVector, Point3d planePoint, 
 			Point3d lineVector, Point3d linePoint);
-
-		/// <summary>
-		/// Pour écrire le modèle final dans un fichier DAE(XML)
-		/// </summary>
-		/// <returns>0 si OK, sinon -1</returns>
-		int drawMap();
 
 	};
 

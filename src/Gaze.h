@@ -26,6 +26,10 @@ namespace sokaris
 		/* Récupération d'info */
 		Point3d getPosition();
 		Point3d getAngles();
+
+		/* Conversion depuis string */
+		int Gaze::setFromString(string strSrc);
+
 	};
 }
 

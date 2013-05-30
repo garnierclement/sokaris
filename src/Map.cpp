@@ -11,169 +11,214 @@ namespace sokaris
 	{
 	}
 
-	int Map::outputResultToFile(string filename, double angleX_observator, 
+	int Map::getListCamerasSize(){
+		return this->listCameras.size();
+	}
+
+	int Map::getListPlanesSize(){
+		return this->listPlanes.size();
+	}
+
+	int Map::getListGazesSize(){
+		return this->listGazes.size();
+	}
+
+
+	/* Sortie du modèle 3D final */
+	int Map::writeResultToFile(string filename, double angleX_observator, 
 		double angleY_observator, double angleZ_observator)
 	{
 		int number_Spot = this->listGazes.size();
-		int number_Plane = this->listPlane.size();
+		int number_Plane = this->listPlanes.size();
 		int i=0;
-		FileStorage fs(filename, FileStorage::WRITE);
-		fs << "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
-		fs << "<COLLADA xmlns=\"http://www.collada.org/2005/11/COLLADASchema\" version=\"1.4.1\">";
-		fs << "  <asset>";
-		fs << "    <contributor>";
-		fs << "      <author>Sokaris</author>";
-		fs << "      <authoring_tool>Blender 2.67.0 r56533</authoring_tool>";
-		fs << "    </contributor>";
-		fs << "    <created>2013-05-27T13:29:29</created>";
-		fs << "    <modified>2013-05-27T13:29:29</modified>";
-		fs << "    <unit name=\"meter\" meter=\"1\"/>";
-		fs << "    <up_axis>Z_UP</up_axis>";
-		fs << "  </asset>";
-		fs << "  <library_cameras>";
-		fs << "    <camera id=\"Camera-camera\" name=\"Observateur\">";
-		fs << "      <optics>";
-		fs << "        <technique_common>";
-		fs << "          <perspective>";
-		fs << "            <xfov sid=\"xfov\">90</xfov>";
-		fs << "            <aspect_ratio>1.3333</aspect_ratio>";
-		fs << "            <znear sid=\"znear\">0.1</znear>";
-		fs << "            <zfar sid=\"zfar\">100</zfar>";
-		fs << "          </perspective>";
-		fs << "        </technique_common>";
-		fs << "      </optics>";
-		fs << "    </camera>";
-		fs << "  </library_cameras>";
-		fs << "  <library_lights>";
+		ofstream fs(filename);
+		fs << "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+		fs << "<COLLADA xmlns=\"http://www.collada.org/2005/11/COLLADASchema\" version=\"1.4.1\">\n";
+		fs << "  <asset>\n";
+		fs << "    <contributor>\n";
+		fs << "      <author>Sokaris</author>\n";
+		fs << "      <authoring_tool>Blender 2.67.0 r56533</authoring_tool>\n";
+		fs << "    </contributor>\n";
+		fs << "    <created>2013-05-27T13:29:29</created>\n";
+		fs << "    <modified>2013-05-27T13:29:29</modified>\n";
+		fs << "    <unit name=\"meter\" meter=\"1\"/>\n";
+		fs << "    <up_axis>Z_UP</up_axis>\n";
+		fs << "  </asset>\n";
+		fs << "  <library_cameras>\n";
+		fs << "    <camera id=\"Camera-camera\" name=\"Observateur\">\n";
+		fs << "      <optics>\n";
+		fs << "        <technique_common>\n";
+		fs << "          <perspective>\n";
+		fs << "            <xfov sid=\"xfov\">90</xfov>\n";
+		fs << "            <aspect_ratio>1.3333</aspect_ratio>\n";
+		fs << "            <znear sid=\"znear\">0.1</znear>\n";
+		fs << "            <zfar sid=\"zfar\">100</zfar>\n";
+		fs << "          </perspective>\n";
+		fs << "        </technique_common>\n";
+		fs << "      </optics>\n";
+		fs << "    </camera>\n";
+		fs << "  </library_cameras>\n";
+		fs << "  <library_lights>\n";
 		for(i=0; i<number_Spot; i++){
-			fs << "    <light id=\"Spot_" << i << "-light\" name=\"Spot." <<i<< "\">";
-			fs << "      <technique_common>";
-			fs << "        <spot>";
-			fs << "          <color sid=\"color\">1 1 1</color>";
-			fs << "          <constant_attenuation>1</constant_attenuation>";
-			fs << "          <linear_attenuation>0</linear_attenuation>";
-			fs << "          <quadratic_attenuation>0.001599967</quadratic_attenuation>";
-			fs << "          <falloff_angle sid=\"fall_off_angle\">15</falloff_angle>";
-			fs << "          <falloff_exponent sid=\"fall_off_exponent\">0.15</falloff_exponent>";
-			fs << "        </spot>";
-			fs << "      </technique_common>";
-			fs << "      <extra>";
-			fs << "        <technique profile=\"blender\">";
-			fs << "          <clipend>40</clipend>";
-			fs << "          <clipsta>0.5</clipsta>";
-			fs << "          <dist sid=\"blender_dist\">25</dist>";
-			fs << "          <energy sid=\"blender_energy\">0.1</energy>";
-			fs << "          <falloff_type>0</falloff_type>";
-			fs << "          <spotblend>0.15</spotblend>";
-			fs << "          <spotsize>15</spotsize>";
-			fs << "          <spread>1</spread>";
-			fs << "          <type>2</type>";
-			fs << "        </technique>";
-			fs << "      </extra>";
-			fs << "    </light>";
+			fs << "    <light id=\"Spot_" << i << "-light\" name=\"Spot." <<i<< "\">\n";
+			fs << "      <technique_common>\n";
+			fs << "        <spot>\n";
+			fs << "          <color sid=\"color\">1 1 1</color>\n";
+			fs << "          <constant_attenuation>1</constant_attenuation>\n";
+			fs << "          <linear_attenuation>0</linear_attenuation>\n";
+			fs << "          <quadratic_attenuation>0.001599967</quadratic_attenuation>\n";
+			fs << "          <falloff_angle sid=\"fall_off_angle\">15</falloff_angle>\n";
+			fs << "          <falloff_exponent sid=\"fall_off_exponent\">0.15</falloff_exponent>\n";
+			fs << "        </spot>\n";
+			fs << "      </technique_common>\n";
+			fs << "      <extra>\n";
+			fs << "        <technique profile=\"blender\">\n";
+			fs << "          <clipend>40</clipend>\n";
+			fs << "          <clipsta>0.5</clipsta>\n";
+			fs << "          <dist sid=\"blender_dist\">25</dist>\n";
+			fs << "          <energy sid=\"blender_energy\">0.1</energy>\n";
+			fs << "          <falloff_type>0</falloff_type>\n";
+			fs << "          <spotblend>0.15</spotblend>\n";
+			fs << "          <spotsize>15</spotsize>\n";
+			fs << "          <spread>1</spread>\n";
+			fs << "          <type>2</type>\n";
+			fs << "        </technique>\n";
+			fs << "      </extra>\n";
+			fs << "    </light>\n";
 		}
-		fs << "  </library_lights>";
-		fs << "  <library_images/>";
-		fs << "  <library_geometries>";
+		fs << "  </library_lights>\n";
+		fs << "  <library_images/>\n";
+		fs << "  <library_geometries>\n";
 		for (i=0; i<number_Plane; i++){
-			fs << "    <geometry id=\"Plane_"<<i<<"-mesh\" name=\"Plane."<<i<<"\">";
-			fs << "      <mesh>";
-			fs << "        <source id=\"Plane_"<<i<<"-mesh-positions\">";
-			fs << "          <float_array id=\"Plane_"<<i<<"-mesh-positions-array\" count=\"12\">1 -1 0 -1 -1 0 1 1 0 -1 1 0</float_array>";
-			fs << "          <technique_common>";
-			fs << "            <accessor source=\"#Plane_"<<i<<"-mesh-positions-array\" count=\"4\" stride=\"3\">";
-			fs << "              <param name=\"X\" type=\"float\"/>";
-			fs << "              <param name=\"Y\" type=\"float\"/>";
-			fs << "              <param name=\"Z\" type=\"float\"/>";
-			fs << "            </accessor>";
-			fs << "          </technique_common>";
-			fs << "        </source>";
-			fs << "        <source id=\"Plane_"<<i<<"-mesh-normals\">";
-			fs << "          <float_array id=\"Plane_"<<i<<"-mesh-normals-array\" count=\"6\">0 0 1 0 0 1</float_array>";
-			fs << "          <technique_common>";
-			fs << "            <accessor source=\"#Plane_"<<i<<"-mesh-normals-array\" count=\"2\" stride=\"3\">";
-			fs << "              <param name=\"X\" type=\"float\"/>";
-			fs << "              <param name=\"Y\" type=\"float\"/>";
-			fs << "              <param name=\"Z\" type=\"float\"/>";
-			fs << "            </accessor>";
-			fs << "          </technique_common>";
-			fs << "        </source>";
-			fs << "        <vertices id=\"Plane_"<<i<<"-mesh-vertices\">";
-			fs << "          <input semantic=\"POSITION\" source=\"#Plane_"<<i<<"-mesh-positions\"/>";
-			fs << "        </vertices>";
-			fs << "        <polylist count=\"2\">";
-			fs << "          <input semantic=\"VERTEX\" source=\"#Plane_"<<i<<"-mesh-vertices\" offset=\"0\"/>";
-			fs << "          <input semantic=\"NORMAL\" source=\"#Plane_"<<i<<"-mesh-normals\" offset=\"1\"/>";
-			fs << "          <vcount>3 3 </vcount>";
-			fs << "          <p>1 0 0 0 2 0 3 1 1 1 2 1</p>";
-			fs << "        </polylist>";
-			fs << "      </mesh>";
-			fs << "      <extra><technique profile=\"MAYA\"><double_sided>1</double_sided></technique></extra>";
-			fs << "    </geometry>";
-			fs << "";
+			fs << "    <geometry id=\"Plane_"<<i<<"-mesh\" name=\"Plane."<<i<<"\">\n";
+			fs << "      <mesh>\n";
+			fs << "        <source id=\"Plane_"<<i<<"-mesh-positions\">\n";
+			fs << "          <float_array id=\"Plane_"<<i<<"-mesh-positions-array\" count=\"12\">1 -1 0 -1 -1 0 1 1 0 -1 1 0</float_array>\n";
+			fs << "          <technique_common>\n";
+			fs << "            <accessor source=\"#Plane_"<<i<<"-mesh-positions-array\" count=\"4\" stride=\"3\">\n";
+			fs << "              <param name=\"X\" type=\"float\"/>\n";
+			fs << "              <param name=\"Y\" type=\"float\"/>\n";
+			fs << "              <param name=\"Z\" type=\"float\"/>\n";
+			fs << "            </accessor>\n";
+			fs << "          </technique_common>\n";
+			fs << "        </source>\n";
+			fs << "        <source id=\"Plane_"<<i<<"-mesh-normals\">\n";
+			fs << "          <float_array id=\"Plane_"<<i<<"-mesh-normals-array\" count=\"6\">0 0 1 0 0 1</float_array>\n";
+			fs << "          <technique_common>\n";
+			fs << "            <accessor source=\"#Plane_"<<i<<"-mesh-normals-array\" count=\"2\" stride=\"3\">\n";
+			fs << "              <param name=\"X\" type=\"float\"/>\n";
+			fs << "              <param name=\"Y\" type=\"float\"/>\n";
+			fs << "              <param name=\"Z\" type=\"float\"/>\n";
+			fs << "            </accessor>\n";
+			fs << "          </technique_common>\n";
+			fs << "        </source>\n";
+			fs << "        <vertices id=\"Plane_"<<i<<"-mesh-vertices\">\n";
+			fs << "          <input semantic=\"POSITION\" source=\"#Plane_"<<i<<"-mesh-positions\"/>\n";
+			fs << "        </vertices>\n";
+			fs << "        <polylist count=\"2\">\n";
+			fs << "          <input semantic=\"VERTEX\" source=\"#Plane_"<<i<<"-mesh-vertices\" offset=\"0\"/>\n";
+			fs << "          <input semantic=\"NORMAL\" source=\"#Plane_"<<i<<"-mesh-normals\" offset=\"1\"/>\n";
+			fs << "          <vcount>3 3 </vcount>\n";
+			fs << "          <p>1 0 0 0 2 0 3 1 1 1 2 1</p>\n";
+			fs << "        </polylist>\n";
+			fs << "      </mesh>\n";
+			fs << "      <extra><technique profile=\"MAYA\"><double_sided>1</double_sided></technique></extra>\n";
+			fs << "    </geometry>\n";
+			fs << "\n";
 		}
-		fs << "  </library_geometries>";
-		fs << "  <library_controllers/>";
-		fs << "  <library_visual_scenes>";
-		fs << "    <visual_scene id=\"Scene\" name=\"Scene\">";
-		fs << "      <node id=\"Camera\" name=\"Camera\" type=\"NODE\">";
-		fs << "        <translate sid=\"location\">17.11059 16.52051 18.54392</translate>";
-		fs << "        <rotate sid=\"rotationZ\">0 0 1 "<<angleZ_observator<<"</rotate>";
-		fs << "        <rotate sid=\"rotationY\">0 1 0 "<<angleY_observator<<"</rotate>";
-		fs << "        <rotate sid=\"rotationX\">1 0 0 "<<angleX_observator<<"</rotate>";
-		fs << "        <scale sid=\"scale\">1 1 1</scale>";
-		fs << "        <instance_camera url=\"#Camera-camera\"/>";
-		fs << "      </node>";
+		fs << "  </library_geometries>\n";
+		fs << "  <library_controllers/>\n";
+		fs << "  <library_visual_scenes>\n";
+		fs << "    <visual_scene id=\"Scene\" name=\"Scene\">\n";
+		fs << "      <node id=\"Camera\" name=\"Camera\" type=\"NODE\">\n";
+		fs << "        <translate sid=\"location\">17.11059 16.52051 18.54392</translate>\n";
+		fs << "        <rotate sid=\"rotationZ\">0 0 1 "<<angleZ_observator<<"</rotate>\n";
+		fs << "        <rotate sid=\"rotationY\">0 1 0 "<<angleY_observator<<"</rotate>\n";
+		fs << "        <rotate sid=\"rotationX\">1 0 0 "<<angleX_observator<<"</rotate>\n";
+		fs << "        <scale sid=\"scale\">1 1 1</scale>\n";
+		fs << "        <instance_camera url=\"#Camera-camera\"/>\n";
+		fs << "      </node>\n";
 		for(i=0; i<number_Spot; i++){
-			fs << "      <node id=\"Spot_"<<i<<"\" name=\"Spot_"<<i<<"\" type=\"NODE\">";
+			fs << "      <node id=\"Spot_"<<i<<"\" name=\"Spot_"<<i<<"\" type=\"NODE\">\n";
 			fs << "        <translate sid=\"location\">"<<this->listGazes[i]->getPosition().x<<" "
-							<<this->listGazes[i]->getPosition().y<<" "<<this->listGazes[i]->getPosition().z<<"</translate>";
-			fs << "        <rotate sid=\"rotationZ\">0 0 1 "<<this->listGazes[i]->getPosition().z<<"</rotate>";
-			fs << "        <rotate sid=\"rotationY\">0 1 0 "<<this->listGazes[i]->getPosition().y<<"</rotate>";
-			fs << "        <rotate sid=\"rotationX\">1 0 0 "<<this->listGazes[i]->getPosition().x<<"</rotate>";
-			fs << "        <scale sid=\"scale\">1 1 1</scale>";
-			fs << "        <instance_light url=\"#Spot_"<<i<<"-light\"/>";
-			fs << "      </node>";
+				<<this->listGazes[i]->getPosition().y<<" "<<this->listGazes[i]->getPosition().z<<"</translate>\n";
+			fs << "        <rotate sid=\"rotationZ\">0 0 1 "<<this->listGazes[i]->getAngles().z<<"</rotate>\n";
+			fs << "        <rotate sid=\"rotationY\">0 1 0 "<<this->listGazes[i]->getAngles().y<<"</rotate>\n";
+			fs << "        <rotate sid=\"rotationX\">1 0 0 "<<this->listGazes[i]->getAngles().x<<"</rotate>\n";
+			fs << "        <scale sid=\"scale\">1 1 1</scale>\n";
+			fs << "        <instance_light url=\"#Spot_"<<i<<"-light\"/>\n";
+			fs << "      </node>\n";
 		}
 		for(i=0;i<number_Plane;i++){
-			fs << "      <node id=\"Plane_"<<i<<"\" name=\"Plane_"<<i<<"\" type=\"NODE\">";
-			fs << "        <translate sid=\"location\">"<<this->listPlane[i]->point.x<<" "
-							<<this->listPlane[i]->point.y<<" "<<this->listPlane[i]->point.z<<"</translate>";
-			fs << "        <rotate sid=\"rotationZ\">0 0 1 "<<this->listPlane[i]->angles.z<<"</rotate>";
-			fs << "        <rotate sid=\"rotationY\">0 1 0 "<<this->listPlane[i]->angles.y<<"</rotate>";
-			fs << "        <rotate sid=\"rotationX\">1 0 0 "<<this->listPlane[i]->angles.x<<"</rotate>";
-			fs << "        <scale sid=\"scale\">"<<this->listPlane[i]->width<<" "<<this->listPlane[i]->height<<" 1</scale>";
-			fs << "        <instance_geometry url=\"#Plane_"<<i<<"-mesh\"/>";
-			fs << "      </node>";
+			fs << "      <node id=\"Plane_"<<i<<"\" name=\"Plane_"<<i<<"\" type=\"NODE\">\n";
+			fs << "        <translate sid=\"location\">"<<this->listPlanes[i]->point.x<<" "
+				<<this->listPlanes[i]->point.y<<" "<<this->listPlanes[i]->point.z<<"</translate>\n";
+			fs << "        <rotate sid=\"rotationZ\">0 0 1 "<<this->listPlanes[i]->angles.z<<"</rotate>\n";
+			fs << "        <rotate sid=\"rotationY\">0 1 0 "<<this->listPlanes[i]->angles.y<<"</rotate>\n";
+			fs << "        <rotate sid=\"rotationX\">1 0 0 "<<this->listPlanes[i]->angles.x<<"</rotate>\n";
+			fs << "        <scale sid=\"scale\">"<<this->listPlanes[i]->width<<" "<<this->listPlanes[i]->height<<" 1</scale>\n";
+			fs << "        <instance_geometry url=\"#Plane_"<<i<<"-mesh\"/>\n";
+			fs << "      </node>\n";
 		}
-		fs << "    </visual_scene>";
-		fs << "  </library_visual_scenes>";
-		fs << "  <scene>";
-		fs << "    <instance_visual_scene url=\"#Scene\"/>";
-		fs << "  </scene>";
-		fs << "</COLLADA>";
-		fs.release();
+		fs << "    </visual_scene>\n";
+		fs << "  </library_visual_scenes>\n";
+		fs << "  <scene>\n";
+		fs << "    <instance_visual_scene url=\"#Scene\"/>\n";
+		fs << "  </scene>\n";
+		fs << "</COLLADA>\n";
+		fs.close();
 		return 0;
 	}
 
-	int Map::getMapFromFile(string filename)
+	int Map::readCamerasFromFile(string filename)
 	{
-		FileStorage fs;
-		fs.open(filename, FileStorage::READ);
-		FileNode n = fs["Map"];
-		if (n.type() != FileNode::SEQ)
-			return -1;										// Map n'est pas une séquence
+		string str_readfile = filename;
+		ifstream f_input;
+		f_input.open(str_readfile.c_str());
+		if(!f_input)
+		{
+			return -1;
+		}
+		string str_output;
+		while(getline(f_input,str_output))
+		{
+			Camera* c = new Camera();
+			if (c->setFromString(str_output)==-1){
+				return -2;
+			}
+			this->listCameras.push_back(c);
+		}
+		return 0;
+	}
 
-		FileNodeIterator it = n.begin(), it_end = n.end();  // Itérateur pour lire la séquence
-		for (; it != it_end; ++it)
-			cout << (string)*it << endl;
+	int Map::readGazesFromFile(string filename)
+	{
+		string str_readfile = filename;
+		ifstream f_input;
+		f_input.open(str_readfile.c_str());
+		if(!f_input)
+		{
+			return -1;
+		}
+		string str_output;
+		while(getline(f_input,str_output))
+		{
+			Gaze* g = new Gaze();
+			if (g->setFromString(str_output)==-1){
+				return -2;
+			}
+			this->listGazes.push_back(g);
+		}
+		return 0;
+	}
 
-		fs.release();										// énoncer la fermeture
+	int Map::readPlanesFromFile(string filename){
+
 		return 0;
 	}
 
 
-	/* Calculation pour la raprésentation */
+	/* Fonctions de calcul */
 	Point3d Map::calculIntersection(
 		Point3d planeVector, Point3d planePoint, 
 		Point3d lineVector, Point3d linePoint){
@@ -193,7 +238,7 @@ namespace sokaris
 			m3 = linePoint.z;
 			vpt = v1 * vp1 + v2 * vp2 + v3 * vp3;
 			if (vpt == 0){
-				returnResult=Point3d(-1,-1,-1); //si perpendiculaire, on retourne un verteur null
+				returnResult=Point3d(); //si perpendiculaire, on retourne un verteur null
 			}
 			else{
 				t = ((n1 - m1) * vp1 + (n2 - m2) * vp2 + (n3 - m3) * vp3) / vpt;
@@ -202,10 +247,5 @@ namespace sokaris
 				returnResult.z = m3 + v3 * t;
 			}
 			return returnResult;
-	}
-
-	/* Sortie du modèle 3D final */
-	int drawMap(){
-		return 0;
 	}
 }

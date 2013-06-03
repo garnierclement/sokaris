@@ -18,7 +18,7 @@
 using namespace std;
 using namespace cv;
 
-int main(int argc, const char** argv)
+int FrontFacePositioning(int argc, const char** argv)
 {
     //create the cascade classifier object used for the face detection
     CascadeClassifier face_cascade;

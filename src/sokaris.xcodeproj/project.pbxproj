@@ -38,6 +38,7 @@
 		57D527B11738499A00A31CE3 /* libopencv_ts.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D527A01738499A00A31CE3 /* libopencv_ts.dylib */; };
 		57D527B21738499A00A31CE3 /* libopencv_video.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D527A11738499A00A31CE3 /* libopencv_video.dylib */; };
 		57D527B31738499A00A31CE3 /* libopencv_videostab.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D527A21738499A00A31CE3 /* libopencv_videostab.dylib */; };
+		5D0D146A175CCFC70082F2C1 /* FrontFacePositioning.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D1469175CCFC70082F2C1 /* FrontFacePositioning.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,6 +100,7 @@
 		57D527A01738499A00A31CE3 /* libopencv_ts.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ts.dylib; path = /usr/local/lib/libopencv_ts.dylib; sourceTree = "<absolute>"; };
 		57D527A11738499A00A31CE3 /* libopencv_video.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.dylib; path = /usr/local/lib/libopencv_video.dylib; sourceTree = "<absolute>"; };
 		57D527A21738499A00A31CE3 /* libopencv_videostab.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.dylib; path = /usr/local/lib/libopencv_videostab.dylib; sourceTree = "<absolute>"; };
+		5D0D1469175CCFC70082F2C1 /* FrontFacePositioning.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrontFacePositioning.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				57D5277F1738439D00A31CE3 /* Flux.h */,
 				57D52781173843FB00A31CE3 /* Picture.cpp */,
 				57D52782173843FB00A31CE3 /* Picture.h */,
+				5D0D1469175CCFC70082F2C1 /* FrontFacePositioning.cpp */,
 				57D52784173845EF00A31CE3 /* Person.cpp */,
 				57D52785173845EF00A31CE3 /* Person.h */,
 				57D527871738468900A31CE3 /* Gaze.cpp */,
@@ -292,6 +295,7 @@
 				5780D62017535EB000CA8B89 /* findEyeCorner.cpp in Sources */,
 				5780D62317535EF700CA8B89 /* helpers.cpp in Sources */,
 				5705A537175531930011F689 /* Interface.cpp in Sources */,
+				5D0D146A175CCFC70082F2C1 /* FrontFacePositioning.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

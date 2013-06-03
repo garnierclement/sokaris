@@ -80,7 +80,8 @@ int frontFacePositioning(int argc, const char** argv)
         //find faces and store them in the vector array
         face_cascade.detectMultiScale(grayscaleFrame, faces, 1.1, 3, CV_HAAR_FIND_BIGGEST_OBJECT|CV_HAAR_SCALE_IMAGE, Size(30,30));
         
-        //
+        //Param d: taille en pixels du visage
+        //Param z: 
         vector<double> d(faces.size()),z(faces.size());
 
         //draw a rectangle for all found faces in the vector array on the original image

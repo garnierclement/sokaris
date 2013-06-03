@@ -17,12 +17,19 @@ using namespace cv;
 int Position(void)
 {
     //create the cascade classifier object used for the face detection
-    CascadeClassifier face_cascade;
+    CascadeClassifier face_cascade1;
+    CascadeClassifier face_cascade2;
+    
     //use the haarcascade_frontalface_alt.xml library
     const char* cascade_name1 =
     "/Users/joel/Documents/My Documents/sokaris/data/opencv/haarcascades/haarcascade_frontalface_alt.xml";
     
-    face_cascade.load(cascade_name1);
+    const char* cascade_name2 =
+    "/Users/joel/Documents/My Documents/sokaris/data/opencv/haarcascades/haarcascade_profileface.xml";
+    
+    face_cascade1.load(cascade_name1);
+    face_cascade2.load(cascade_name2);
+    
     
     //setup video capture device and link it to the first capture device
     VideoCapture captureDevice;
@@ -40,7 +47,7 @@ int Position(void)
     cout << "Resolution is: " << endl;
     cout << "H= " << H << endl;
     cout << "W= " << W << endl;
-
+    
     //Creer un point au centre de l'ecran
     Point2f screenCenter(W/2.0,H/2.0);
     
@@ -53,9 +60,9 @@ int Position(void)
     //FIN CALIBRATION
     
     //matrice d'images
-    Mat captureFrame; //video de capture
-    Mat grayscaleFrame; //video a traiter en gris et equalisee  
-
+    Mat captureFrame, captureFrame2; //video de capture
+    Mat grayscaleFrame; //video a traiter en gris et equalisee
+    
     
     //fenetre d'affichage
     namedWindow("outputCapture", 1);
@@ -64,7 +71,9 @@ int Position(void)
     while(true)
     {
         //redirige le flux
-        captureDevice>>captureFrame;
+        captureDevice>>captureFrame2;
+        flip(captureFrame2, captureFrame, 1);
+        
         
         //convert captured image to gray scale and equalize
         cvtColor(captureFrame, grayscaleFrame, CV_BGR2GRAY);
@@ -74,12 +83,21 @@ int Position(void)
         vector<Rect> faces;
         
         //find faces and store them in the vector array
-        face_cascade.detectMultiScale(grayscaleFrame, faces, 1.1, 3, CV_HAAR_FIND_BIGGEST_OBJECT|CV_HAAR_SCALE_IMAGE, Size(30,30));
-        
-        //Param d: taille en pixels du visage
-        //Param z: 
+        face_cascade1.detectMultiScale(grayscaleFrame, faces, 1.1, 3, CV_HAAR_FIND_BIGGEST_OBJECT|CV_HAAR_SCALE_IMAGE, Size(30,30));
+        String typeOfDetection;
+        if(faces.size()==0){
+            face_cascade2.detectMultiScale(grayscaleFrame, faces, 1.1, 3, CV_HAAR_FIND_BIGGEST_OBJECT|CV_HAAR_SCALE_IMAGE, Size(30,30));
+            if(faces.size()>0){
+                typeOfDetection = "Profile";
+            }else{
+                typeOfDetection = "None";
+            }
+        }else{
+            typeOfDetection = "Face";
+            
+        }
         vector<double> d(faces.size()),z(faces.size());
-
+        
         //draw a rectangle for all found faces in the vector array on the original image
         for(int i = 0; i < faces.size(); i++)
         {
@@ -107,11 +125,20 @@ int Position(void)
             
             //Positioner le texte sur l'ecran
             Point2f textPosition((W/12),7*H/8);
+            Point2f textPosition2((W*7/8),7*H/8);
+            
             //Mise du texte sur l'ecran
             putText(captureFrame, outputText, textPosition, FONT_HERSHEY_SIMPLEX, 0.6, Scalar(255,255,255),1,8,false);
+            
+            
+            putText(captureFrame, typeOfDetection, textPosition2, FONT_HERSHEY_SIMPLEX, 0.6, Scalar(255,255,255),1,8,false);
+            
+            
+            
         }
         
         //print the output
+        
         imshow("outputCapture", captureFrame);
         
         // Il y a un frame rate de 1/3 s = 33 ms

@@ -38,6 +38,8 @@
 		57D527B11738499A00A31CE3 /* libopencv_ts.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D527A01738499A00A31CE3 /* libopencv_ts.dylib */; };
 		57D527B21738499A00A31CE3 /* libopencv_video.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D527A11738499A00A31CE3 /* libopencv_video.dylib */; };
 		57D527B31738499A00A31CE3 /* libopencv_videostab.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D527A21738499A00A31CE3 /* libopencv_videostab.dylib */; };
+		5D6E594E175C85A70007DE06 /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E594C175C85A70007DE06 /* Position.cpp */; };
+		5D6E5957175CCB8C0007DE06 /* FrontFacePositioning.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E5956175CCB8C0007DE06 /* FrontFacePositioning.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,6 +101,9 @@
 		57D527A01738499A00A31CE3 /* libopencv_ts.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ts.dylib; path = /usr/local/lib/libopencv_ts.dylib; sourceTree = "<absolute>"; };
 		57D527A11738499A00A31CE3 /* libopencv_video.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.dylib; path = /usr/local/lib/libopencv_video.dylib; sourceTree = "<absolute>"; };
 		57D527A21738499A00A31CE3 /* libopencv_videostab.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.dylib; path = /usr/local/lib/libopencv_videostab.dylib; sourceTree = "<absolute>"; };
+		5D6E594C175C85A70007DE06 /* Position.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Position.cpp; sourceTree = SOURCE_ROOT; };
+		5D6E594D175C85A70007DE06 /* Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Position.h; sourceTree = SOURCE_ROOT; };
+		5D6E5956175CCB8C0007DE06 /* FrontFacePositioning.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FrontFacePositioning.cpp; path = ../FrontFacePositioning.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				5705A535175531930011F689 /* Interface.cpp */,
+				5D6E5956175CCB8C0007DE06 /* FrontFacePositioning.cpp */,
 				5705A536175531930011F689 /* Interface.h */,
 				57D52777173840E400A31CE3 /* Map.cpp */,
 				57D52778173840E400A31CE3 /* Map.h */,
@@ -184,6 +190,8 @@
 				5780D62117535EF700CA8B89 /* helpers.cpp */,
 				5780D62217535EF700CA8B89 /* helpers.h */,
 				5780D61E17535CBE00CA8B89 /* constants.h */,
+				5D6E594C175C85A70007DE06 /* Position.cpp */,
+				5D6E594D175C85A70007DE06 /* Position.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -292,6 +300,8 @@
 				5780D62017535EB000CA8B89 /* findEyeCorner.cpp in Sources */,
 				5780D62317535EF700CA8B89 /* helpers.cpp in Sources */,
 				5705A537175531930011F689 /* Interface.cpp in Sources */,
+				5D6E594E175C85A70007DE06 /* Position.cpp in Sources */,
+				5D6E5957175CCB8C0007DE06 /* FrontFacePositioning.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

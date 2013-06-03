@@ -9,12 +9,12 @@
  Cette fonction detecte -au plus une personne- -de face- et calcule ses coordonnees polaires par rapport a la camera
 */
 
-#include "FrontFacePositioning.h"
+#include "Position.h"
 
 using namespace std;
 using namespace cv;
 
-int frontFacePositioning(void)
+int Position(void)
 {
     //create the cascade classifier object used for the face detection
     CascadeClassifier face_cascade;

@@ -15,6 +15,6 @@
 #include <vector>
 #include <iterator>
 
-int frontFacePositioning(void);
+int Position(void);
 
 #endif

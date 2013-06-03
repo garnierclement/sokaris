@@ -89,7 +89,6 @@ namespace sokaris
         
         // cvtColor( frame, frame_gray, CV_BGR2GRAY );
         //equalizeHist( frame_gray, frame_gray );
-        
         //-- Detect faces
 		//-- Calculate the face orientation and give it as a parameter to the new object person
 		//-- Create a new person for each face detected

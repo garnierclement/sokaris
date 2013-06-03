@@ -80,10 +80,6 @@
     <ClCompile Include="..\Process.cpp" />
     <ClCompile Include="..\Test.cpp" />
     <ClCompile Include="..\test3.cpp" />
-    <ClCompile Include="..\tinystr.cpp" />
-    <ClCompile Include="..\tinyxml.cpp" />
-    <ClCompile Include="..\tinyxmlerror.cpp" />
-    <ClCompile Include="..\tinyxmlparser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\eyeLike\src\constants.h" />
@@ -99,8 +95,6 @@
     <ClInclude Include="..\Picture.h" />
     <ClInclude Include="..\Process.h" />
     <ClInclude Include="..\Test.h" />
-    <ClInclude Include="..\tinystr.h" />
-    <ClInclude Include="..\tinyxml.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\samples2.csv" />

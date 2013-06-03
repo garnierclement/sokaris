@@ -17,7 +17,7 @@
 #include "Process.h"
 #include "Flux.h"
 #include "Test.h"
-#include "FrontFacePositioning.h"
+#include "Position.h"
 
 using namespace std;
 

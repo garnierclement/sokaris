@@ -103,7 +103,7 @@ namespace sokaris
     
     void Interface::testJoel()
     {
-        frontFacePositioning();
+        Position();
     }
     
     void Interface::testMapWriting(string filename)

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Joel. All rights reserved.
 //
 /*
- Cette fonction detecte -au plus une personne- -de face- et calcule ses coordonnees polaires par rapport a la camera
+ Cette fonction detecte -au plus une personne- -de face ou de profil- et calcule ses coordonnees polaires par rapport a la camera
 */
 
 #include "Position.h"

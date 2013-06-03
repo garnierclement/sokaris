@@ -59,7 +59,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-view"
+            argument = "-test 2"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

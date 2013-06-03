@@ -57,6 +57,8 @@ namespace sokaris
                     testArthur();
                 else if (test == 1)
                     testClement();
+                else if (test == 2)
+                    testJoel();
                 else
                     cout << "Unkown test : " << argv[i] << endl;
             }
@@ -97,6 +99,11 @@ namespace sokaris
     {
         Flux fl("/Users/garnierclement/Desktop/","test.mp4");
         fl.display(true, Process::testCallback);
+    }
+    
+    void Interface::testJoel()
+    {
+        frontFacePositioning();
     }
     
     void Interface::testMapWriting(string filename)

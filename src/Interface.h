@@ -17,6 +17,7 @@
 #include "Process.h"
 #include "Flux.h"
 #include "Test.h"
+#include "FrontFacePositioning.h"
 
 using namespace std;
 
@@ -31,6 +32,7 @@ namespace sokaris
         // Différents tests
         static void testArthur();
         static void testClement();
+        static void testJoel();
         static void view(string filename = "");
         static void testMapWriting(string filename);
     };

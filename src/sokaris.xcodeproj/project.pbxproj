@@ -166,9 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				5705A535175531930011F689 /* Interface.cpp */,
+				5705A536175531930011F689 /* Interface.h */,
 				5D1226B9175CF0E80077BC4D /* Output.cpp */,
 				5D1226BA175CF0E80077BC4D /* Output.h */,
-				5705A536175531930011F689 /* Interface.h */,
 				57D52777173840E400A31CE3 /* Map.cpp */,
 				57D52778173840E400A31CE3 /* Map.h */,
 				57D5277B1738434400A31CE3 /* Camera.cpp */,

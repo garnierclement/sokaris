@@ -14,7 +14,9 @@
 #include <stdio.h>
 #include <vector>
 #include <iterator>
+#include "Output.h"
 
+std::vector<double> referencialChangement(double z, double teta);
 int Position(void);
 
 #endif

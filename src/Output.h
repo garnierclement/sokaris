@@ -16,4 +16,8 @@
 #include <vector>
 #include <iterator>
 #include <iomanip>
+
+int Output(int cameraId, double x, double y, double z, double aX, double aY, double aZ, int flag);
+
+
 #endif /* defined(__sokaris__Output__) */

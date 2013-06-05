@@ -58,4 +58,28 @@ namespace sokaris
 		return 0;
 	}
 
+	void Gaze::changeCoordinates(Camera *myCam){
+		Point3d tempA;
+		Point3d tempP;
+		Point3d angC = myCam->getAngles();
+		Point3d posC = this->getPosition();
+		tempP.x = myCam->getPosition().x + 
+			posC.x * cos(angC.x) * cos(angC.z) +
+			posC.y * ( cos(angC.x) * sin(angC.z) + sin(angC.x) * sin(angC.y) * cos(angC.z) ) +
+			posC.z * ( sin(angC.x) * sin(angC.z) - cos(angC.x) * sin(angC.y) * cos(angC.z) );
+		tempP.y = myCam->getPosition().y + 
+			posC.x * ( - cos(angC.x) * sin(angC.z) )+
+			posC.y * ( cos(angC.x) * cos(angC.z) + sin(angC.x) * cos(angC.x) * sin(angC.z) ) +
+			posC.z * ( sin(angC.x) * cos(angC.z) - cos(angC.x) * sin(angC.y) * sin(angC.z) );
+		tempP.z = myCam->getPosition().z + 
+			posC.x * sin(angC.y) +
+			posC.y * ( - sin(angC.x) * cos(angC.y) ) +
+			posC.z * ( cos(angC.x) * cos(angC.y) );
+		tempA.x = angC.x + this->getAngles().x; 
+		tempA.y = angC.y + this->getAngles().y; 
+		tempA.z = angC.z + this->getAngles().z; 
+		this->setPosition(tempP);
+		this->setAngles(tempA);
+	}
+
 }

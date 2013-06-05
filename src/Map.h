@@ -71,6 +71,7 @@ namespace sokaris
 		Point3d calculIntersection(
 			Point3d planeVector, Point3d planePoint, 
 			Point3d lineVector, Point3d linePoint);
+
 	};
 }
 

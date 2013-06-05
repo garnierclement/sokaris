@@ -77,4 +77,5 @@ namespace sokaris
 		this->timestamp = atof(vStrings[9].c_str());
 		return 0;
 	}
+
 }

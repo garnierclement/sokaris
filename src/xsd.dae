@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Sokaris</author>
+      <authoring_tool>Blender 2.67.0 r56533</authoring_tool>
+    </contributor>
+    <created>2013-05-27T13:29:29</created>
+    <modified>2013-05-27T13:29:29</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera-camera" name="Observator">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">90</xfov>
+            <aspect_ratio>1.3333</aspect_ratio>
+            <znear sid="znear">0.1</znear>
+            <zfar sid="zfar">100</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Spot_0-light" name="Spot.0">
+      <technique_common>
+        <spot>
+          <color sid="color">1 1 1</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0.001599967</quadratic_attenuation>
+          <falloff_angle sid="fall_off_angle">15</falloff_angle>
+          <falloff_exponent sid="fall_off_exponent">0.15</falloff_exponent>
+        </spot>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <clipend>40</clipend>
+          <clipsta>0.5</clipsta>
+          <dist sid="blender_dist">25</dist>
+          <energy sid="blender_energy">0.1</energy>
+          <falloff_type>0</falloff_type>
+          <spotblend>0.15</spotblend>
+          <spotsize>15</spotsize>
+          <spread>1</spread>
+          <type>2</type>
+        </technique>
+      </extra>
+    </light>
+    <light id="Spot_1-light" name="Spot.1">
+      <technique_common>
+        <spot>
+          <color sid="color">1 1 1</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0.001599967</quadratic_attenuation>
+          <falloff_angle sid="fall_off_angle">15</falloff_angle>
+          <falloff_exponent sid="fall_off_exponent">0.15</falloff_exponent>
+        </spot>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <clipend>40</clipend>
+          <clipsta>0.5</clipsta>
+          <dist sid="blender_dist">25</dist>
+          <energy sid="blender_energy">0.1</energy>
+          <falloff_type>0</falloff_type>
+          <spotblend>0.15</spotblend>
+          <spotsize>15</spotsize>
+          <spread>1</spread>
+          <type>2</type>
+        </technique>
+      </extra>
+    </light>
+    <light id="Spot_2-light" name="Spot.2">
+      <technique_common>
+        <spot>
+          <color sid="color">1 1 1</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0.001599967</quadratic_attenuation>
+          <falloff_angle sid="fall_off_angle">15</falloff_angle>
+          <falloff_exponent sid="fall_off_exponent">0.15</falloff_exponent>
+        </spot>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <clipend>40</clipend>
+          <clipsta>0.5</clipsta>
+          <dist sid="blender_dist">25</dist>
+          <energy sid="blender_energy">0.1</energy>
+          <falloff_type>0</falloff_type>
+          <spotblend>0.15</spotblend>
+          <spotsize>15</spotsize>
+          <spread>1</spread>
+          <type>2</type>
+        </technique>
+      </extra>
+    </light>
+    <light id="Spot_3-light" name="Spot.3">
+      <technique_common>
+        <spot>
+          <color sid="color">1 1 1</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0.001599967</quadratic_attenuation>
+          <falloff_angle sid="fall_off_angle">15</falloff_angle>
+          <falloff_exponent sid="fall_off_exponent">0.15</falloff_exponent>
+        </spot>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <clipend>40</clipend>
+          <clipsta>0.5</clipsta>
+          <dist sid="blender_dist">25</dist>
+          <energy sid="blender_energy">0.1</energy>
+          <falloff_type>0</falloff_type>
+          <spotblend>0.15</spotblend>
+          <spotsize>15</spotsize>
+          <spread>1</spread>
+          <type>2</type>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_images/>
+  <library_geometries>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Camera" name="Observator" type="NODE">
+        <translate sid="location">5 5 5</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 45</rotate>
+        <rotate sid="rotationX">1 0 0 135</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_camera url="#Camera-camera"/>
+      </node>
+      <node id="Spot_0" name="Spot_0" type="NODE">
+        <translate sid="location">0 5.32157 7</translate>
+        <rotate sid="rotationZ">0 0 1 90</rotate>
+        <rotate sid="rotationY">0 1 0 0</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_light url="#Spot_0-light"/>
+      </node>
+      <node id="Spot_1" name="Spot_1" type="NODE">
+        <translate sid="location">0 8 0</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 -45</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_light url="#Spot_1-light"/>
+      </node>
+      <node id="Spot_2" name="Spot_2" type="NODE">
+        <translate sid="location">3 4 4</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 -47</rotate>
+        <rotate sid="rotationX">1 0 0 25</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_light url="#Spot_2-light"/>
+      </node>
+      <node id="Spot_3" name="Spot_3" type="NODE">
+        <translate sid="location">0 8 0</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 -45</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_light url="#Spot_3-light"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

@@ -125,26 +125,26 @@ namespace sokaris
             cout << "error loading Cameras" << endl;
             exit(EXIT_FAILURE);
         }
-            cout << m->getListCamerasSize() << endl;
-            cout << m->getListGazesSize() << endl;
-            m->writeResultToFile("xsd.dae",0.1,5,5,5,135,45,0);
-            
-            Gaze* g = new Gaze();
-            g->setAngles(Point3d(1,1,1));
-            Point3d p1 = g->getAngles();
-            Point3d p2 = p1;
-            p1.x=100;
-            cout << p2.x << endl;
-            
-            Camera* c = new Camera(999, 10, 10, 10, 0, 45, 0,
-                                   24, "AV", 135790);
-            Gaze* gt=new Gaze(5, 5, 5, 0, 0, 0, 999);
-            gt->changeCoordinates(c);
-            cout << gt->getPosition().x << gt->getPosition().y << gt->getPosition().z <<endl;
-            
-            int temp;
-            cin >> temp;
-        }
+        
+        cout << m->getListCamerasSize() << endl;
+        cout << m->getListGazesSize() << endl;
+        m->writeResultToFile("xsd.dae",0.1,5,5,5,135,45,0);
+        
+        Gaze* g = new Gaze();
+        g->setAngles(Point3d(1,1,1));
+        Point3d p1 = g->getAngles();
+        Point3d p2 = p1;
+        p1.x=100;
+        cout << p2.x << endl;
+        
+        Camera* c = new Camera(999, 10, 10, 10, 0, 45, 0,
+                               24, "AV", 135790);
+        Gaze* gt=new Gaze(5, 5, 5, 0, 0, 0, 999);
+        gt->changeCoordinates(c);
+        cout << gt->getPosition().x << gt->getPosition().y << gt->getPosition().z <<endl;
+        
+        int temp;
+        cin >> temp;
     }
     
     void Interface::view(string filename)

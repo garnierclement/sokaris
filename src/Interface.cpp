@@ -59,6 +59,8 @@ namespace sokaris
                     testClement();
                 else if (test == 2)
                     testJoel();
+                else if (test == 3)
+                    testMinwei();
                 else
                     cout << "Unkown test : " << argv[i] << endl;
             }

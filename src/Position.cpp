@@ -136,8 +136,8 @@ int Position(void)
             double xScreen = screenCenter.x-pt3.x;
             double xReel = xScreen*z[i]/f;
             
-            double angle = asin(xReel/z[i])*180/3.141592;
-            double angleRads = asin(xReel/z[i]);
+            double angle = -asin(xReel/z[i])*180/3.141592;
+            double angleRads = -asin(xReel/z[i]);
 
             //cout << "l'angle est le suivant: " << angle << "\n";
             
@@ -187,23 +187,27 @@ int Position(void)
 // teta: angle teta de la personne a la camera
  */
 vector<double> referencialChangement(double z, double teta){
-    cout << "Changing referencial" << endl;
-    cout << "z = " << z << " | teta = " << teta;
+    //cout << "z = " << z << " | teta = " << teta;
     
     //hauteur moyenne de la personne
-    const double Hm = 178;
+    const double Hm = 175;
     
     //Params de la camera
-    const double Zc = 200;
-    const double alpha = 3.1416/4; //45 degree
+    const double Zc = 115 ;
+    
+    const double alpha = 0; // angle entre l'axe x et la direction de la camera
     
     //Distance de la base a la personne
-    const double M = sqrt(z*z-(Zc-Hm)*(Zc-Hm));
+    double delta = abs(Zc - Hm);
+    
+    delta = 10;  //Adjust delta distance verticale de la tete a la camera
+    
+    const double M = sqrt(abs(z*z-delta*delta));
     
     vector <double> output(3);
-    
-    output[0] = M*cos(alpha+teta); //xp
-    output[1] = M*sin(alpha+teta); //yp
+  
+    output[0] = M*cos(teta); //xp
+    output[1] = M*sin(teta); //yp
     output[2] = Hm; //zp
     return output;
 }

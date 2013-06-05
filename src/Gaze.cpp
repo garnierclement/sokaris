@@ -58,6 +58,24 @@ namespace sokaris
 		return 0;
 	}
 
+	string Gaze::serialize(){
+		string outStr;
+		outStr.append(num2str(this->idCamera)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->position.x)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->position.y)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->position.z)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->angles.x)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->angles.y)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->angles.z)); 
+		return outStr;
+	}
+
 	void Gaze::changeCoordinates(Camera *myCam){
 		Point3d tempA;
 		Point3d tempP;

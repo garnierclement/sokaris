@@ -78,4 +78,35 @@ namespace sokaris
 		return 0;
 	}
 
+	string num2str(double i)
+	{
+		stringstream ss;
+		ss<<i;
+		return ss.str();
+	}
+
+	string Camera::serialize(){
+		string outStr;
+		outStr.append(num2str(this->id)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->position.x)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->position.y)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->position.z)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->angles.x)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->angles.y)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->angles.z)); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->framerate)); 
+		outStr.append(" "); 
+		outStr.append(this->format); 
+		outStr.append(" "); 
+		outStr.append(num2str(this->timestamp));
+		return outStr;
+	}
+
 }

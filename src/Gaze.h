@@ -36,6 +36,9 @@ namespace sokaris
 
 		/* Conversion depuis string */
 		int setFromString(string strSrc);
+
+		/* Conversion vers string */
+		string serialize();
 		
 		/* Changement de base */
 		void changeCoordinates(Camera *myCam);

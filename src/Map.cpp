@@ -25,14 +25,14 @@ namespace sokaris
 
 
 	/* Sortie du modèle 3D final */
-	int Map::writeResultToFile(string filename, double energy, double posX_observator, 
+	int Map::writeDAEResultToFile(string filename, double energy, double posX_observator, 
 		double posY_observator, double posZ_observator, double angleX_observator, 
 		double angleY_observator, double angleZ_observator)
 	{
 		int number_Spot = this->listGazes.size();
 		int number_Plane = this->listPlanes.size();
 		int i=0;
-		ofstream fs(filename.c_str());
+		ofstream fs(filename);
 		fs << "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
 		fs << "<COLLADA xmlns=\"http://www.collada.org/2005/11/COLLADASchema\" version=\"1.4.1\">\n";
 		fs << "  <asset>\n";
@@ -247,4 +247,35 @@ namespace sokaris
 			}
 			return returnResult;
 	}
+
+	int Map::writeIntersectionsToFile(string filename){
+		ofstream fs(filename);
+		for (int i=0;i<this->listIntersection.size();i++){
+			fs << this->listIntersection[i]->time << " " 
+				<< this->listIntersection[i]->position.x << " "
+				<< this->listIntersection[i]->position.y << " " 
+				<< this->listIntersection[i]->position.z << " " 
+				<< "\n";
+		}
+		fs.close();
+		return 0;
+	}
+	
+	int Map::writePlanesToFile(string filename){
+		ofstream fs(filename);
+		for (int i=0;i<this->listPlanes.size();i++){
+			fs << this->listPlanes[i]->point.x << " "
+				<< this->listPlanes[i]->point.y << " " 
+				<< this->listPlanes[i]->point.z << " " 
+				<< this->listPlanes[i]->angles.x << " "
+				<< this->listPlanes[i]->angles.y << " " 
+				<< this->listPlanes[i]->angles.z << " " 
+				<< this->listPlanes[i]->height << " "
+				<< this->listPlanes[i]->width << " "
+				<< "\n";
+		}
+		fs.close();
+		return 0;
+	}
+
 }

@@ -43,7 +43,13 @@ namespace sokaris
 
 		/* Conversion depuis string */
 		int setFromString(string strSrc);
+
+		/* Conversion vers string */
+		string serialize();
     };
+
+	string num2str(double i);
+
 }
 
 #endif /* defined(__sokaris__Camera__) */

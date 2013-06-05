@@ -9,9 +9,7 @@
 //  flag = 1 -> La fonction effacera tout le contenu de la trace avant d'ecrire ses informations
 //  flag = 0 -> La fonction continuera d'ecrire ses infos a la suite du fichier 
 //
-//
-//
-//
+
 
 #include "Output.h"
 
@@ -28,7 +26,7 @@ int Output(int cameraId, double x, double y, double z, double aX, double aY, dou
     sstm << cameraId << " " << xRounded << " " << yRounded << " " << zRounded << " " << aX << " "<< aY << " " << aZ << " "<<endl;
     
     string outputText = sstm.str();
-    
+    cout << outputText;
     //Changer le nom du fichier pour un fichier local
     string filename = "/Users/joel/Desktop/example";
     

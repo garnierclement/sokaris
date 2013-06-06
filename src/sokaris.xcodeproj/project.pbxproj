@@ -39,6 +39,7 @@
 		57D527B21738499A00A31CE3 /* libopencv_video.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D527A11738499A00A31CE3 /* libopencv_video.dylib */; };
 		57D527B31738499A00A31CE3 /* libopencv_videostab.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D527A21738499A00A31CE3 /* libopencv_videostab.dylib */; };
 		5D0D146A175CCFC70082F2C1 /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D1469175CCFC70082F2C1 /* Position.cpp */; };
+		5D0E2CB317607F850077F77E /* MultiplePositions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E2CB117607F850077F77E /* MultiplePositions.cpp */; };
 		5D1226BB175CF0E80077BC4D /* Output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D1226B9175CF0E80077BC4D /* Output.cpp */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,8 @@
 		57D527A11738499A00A31CE3 /* libopencv_video.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.dylib; path = /usr/local/lib/libopencv_video.dylib; sourceTree = "<absolute>"; };
 		57D527A21738499A00A31CE3 /* libopencv_videostab.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.dylib; path = /usr/local/lib/libopencv_videostab.dylib; sourceTree = "<absolute>"; };
 		5D0D1469175CCFC70082F2C1 /* Position.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Position.cpp; sourceTree = SOURCE_ROOT; };
+		5D0E2CB117607F850077F77E /* MultiplePositions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiplePositions.cpp; sourceTree = SOURCE_ROOT; };
+		5D0E2CB217607F850077F77E /* MultiplePositions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplePositions.h; sourceTree = SOURCE_ROOT; };
 		5D1226B9175CF0E80077BC4D /* Output.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Output.cpp; sourceTree = SOURCE_ROOT; };
 		5D1226BA175CF0E80077BC4D /* Output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Output.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -178,6 +181,8 @@
 				57D52781173843FB00A31CE3 /* Picture.cpp */,
 				57D52782173843FB00A31CE3 /* Picture.h */,
 				5D0D1469175CCFC70082F2C1 /* Position.cpp */,
+				5D0E2CB117607F850077F77E /* MultiplePositions.cpp */,
+				5D0E2CB217607F850077F77E /* MultiplePositions.h */,
 				572CDAC4175CD18500F2EB68 /* Position.h */,
 				57D52784173845EF00A31CE3 /* Person.cpp */,
 				57D52785173845EF00A31CE3 /* Person.h */,
@@ -304,6 +309,7 @@
 				5705A537175531930011F689 /* Interface.cpp in Sources */,
 				5D0D146A175CCFC70082F2C1 /* Position.cpp in Sources */,
 				5D1226BB175CF0E80077BC4D /* Output.cpp in Sources */,
+				5D0E2CB317607F850077F77E /* MultiplePositions.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

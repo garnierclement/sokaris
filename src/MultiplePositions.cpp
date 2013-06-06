@@ -143,7 +143,7 @@ int MultiplePositions(void)
         imshow("outputCapture", captureFrame);
         
         // Il y a un frame rate de 1/3 s = 33 ms
-        waitKey(33);
+        if(waitKey(30) >= 0) break;
         
         
     }

@@ -151,38 +151,3 @@ int MultiplePositions(void)
     
     return 0;
 }
-
-/*
- * Parametres de la camera:
- * alpha: angle d'inclinaison (radians)
- * Zc: hauteur de la camera (cm)
- *
- // z: distance de la personne a la camera
- // teta: angle teta de la personne a la camera
- */
-vector<double> referencialChangement(double z, double teta){
-    //cout << "z = " << z << " | teta = " << teta;
-    
-    //hauteur moyenne de la personne
-    const double Hm = 175;
-    
-    //Params de la camera
-    const double Zc = 115 ;
-    
-    const double alpha = 0; // angle entre l'axe x et la direction de la camera
-    
-    //Distance de la base a la personne
-    double delta = abs(Zc - Hm);
-    
-    delta = 10;  //Adjust delta distance verticale de la tete a la camera
-    
-    const double M = sqrt(abs(z*z-delta*delta));
-    
-    vector <double> output(3);
-    
-    output[0] = M*cos(teta); //xp
-    output[1] = M*sin(teta); //yp
-    output[2] = Hm; //zp
-    return output;
-}
-

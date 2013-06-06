@@ -105,7 +105,7 @@ namespace sokaris
     
     void Interface::testJoel()
     {
-        Position();
+         MultiplePositions();
     }
     
     void Interface::testMapWriting(string filename)

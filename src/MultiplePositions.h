@@ -18,6 +18,6 @@
 #include "Output.h"
 
 std::vector<double> referencialChangement(double z, double teta);
-int Position(void);
+int MultiplePositions(void);
 
 #endif /* defined(__sokaris__MultiplePositions__) */

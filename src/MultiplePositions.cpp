@@ -87,7 +87,7 @@ int MultiplePositions(void)
         D = DFace; //Default Value of Diameter
         
         //find faces and store them in the vector array
-         face_cascade1.detectMultiScale(grayscaleFrame, faces, 1.1, 3, CV_HAAR_FIND_BIGGEST_OBJECT|CV_HAAR_SCALE_IMAGE, Size(30,30));
+         face_cascade1.detectMultiScale(grayscaleFrame, faces, 1.1, 3, CV_HAAR_SCALE_IMAGE, Size(30,30));
         
 
         vector<double> d(faces.size()),z(faces.size());
@@ -97,8 +97,7 @@ int MultiplePositions(void)
             Point pt1(faces[i].x + faces[i].width, faces[i].y + faces[i].height);
             Point pt2(faces[i].x, faces[i].y);
             rectangle(captureFrame, pt1, pt2, cvScalar(0, 255, 0, 0), 1, 8, 0);
-            Point pt6(faces[i].x,faces[i].y);
-            circle(captureFrame, pt6, 10, cvScalar(0, 255, 0, 0));
+
             
             //Point 3 est le centre du rectangle qui fait le contour du visage
             Point pt3(faces[i].x + faces[i].width/2, faces[i].y + faces[i].height/2);
@@ -121,11 +120,11 @@ int MultiplePositions(void)
             String outputText = sstm.str();
             
             //Positioner le texte sur l'ecran
-            Point2f textPosition((W/12),7*H/8);
+            //Point2f textPosition((W/12),7*H/8);
             
             //Mise du texte sur l'ecran
-            putText(captureFrame, outputText, textPosition, FONT_HERSHEY_SIMPLEX, 0.6, Scalar(255,255,255),1,8,false);
-
+            putText(captureFrame, outputText, Point((W/12),(12+i)*H/16), FONT_HERSHEY_SIMPLEX, 0.6, Scalar(255,255,255),1,8,false);
+            
             
             //log everything
             //Changer de base

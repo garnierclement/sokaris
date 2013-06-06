@@ -18,6 +18,8 @@
 #include "Flux.h"
 #include "Test.h"
 #include "Position.h"
+#include "MultiplePositions.h"
+
 
 using namespace std;
 

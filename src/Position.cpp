@@ -122,8 +122,7 @@ int Position(void)
             Point pt1(faces[i].x + faces[i].width, faces[i].y + faces[i].height);
             Point pt2(faces[i].x, faces[i].y);
             rectangle(captureFrame, pt1, pt2, cvScalar(0, 255, 0, 0), 1, 8, 0);
-            Point pt6(faces[i].x,faces[i].y);
-            circle(captureFrame, pt6, 10, cvScalar(0, 255, 0, 0));
+
             
             //Point 3 est le centre du rectangle qui fait le contour du visage
             Point pt3(faces[i].x + faces[i].width/2, faces[i].y + faces[i].height/2);

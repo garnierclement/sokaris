@@ -33,6 +33,7 @@ namespace sokaris
         static void testArthur();
         static void testClement();
         static void testJoel();
+        static void testMinwei();
         static void view(string filename = "");
         static void testMapWriting(string filename);
     };

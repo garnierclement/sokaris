@@ -21,3 +21,5 @@ src/VS2012/sokaris.opensdf
 src/VS2012/sokaris.v11.suo
 
 src/VS2012/x64/Debug/
+
+.DS_Store

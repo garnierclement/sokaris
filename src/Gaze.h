@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include "Camera.h"
 #include <opencv2/opencv.hpp>
 
 using namespace cv;
@@ -35,6 +36,12 @@ namespace sokaris
 
 		/* Conversion depuis string */
 		int setFromString(string strSrc);
+
+		/* Conversion vers string */
+		string serialize();
+		
+		/* Changement de base */
+		void changeCoordinates(Camera *myCam);
 
 	};
 }

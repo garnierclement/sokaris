@@ -32,7 +32,7 @@ namespace sokaris
 		int number_Spot = this->listGazes.size();
 		int number_Plane = this->listPlanes.size();
 		int i=0;
-		ofstream fs(filename);
+		ofstream fs(filename.c_str());
 		fs << "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
 		fs << "<COLLADA xmlns=\"http://www.collada.org/2005/11/COLLADASchema\" version=\"1.4.1\">\n";
 		fs << "  <asset>\n";
@@ -249,7 +249,7 @@ namespace sokaris
 	}
 
 	int Map::writeIntersectionsToFile(string filename){
-		ofstream fs(filename);
+		ofstream fs(filename.c_str());
 		for (int i=0;i<this->listIntersection.size();i++){
 			fs << this->listIntersection[i]->time << " " 
 				<< this->listIntersection[i]->position.x << " "
@@ -262,7 +262,7 @@ namespace sokaris
 	}
 	
 	int Map::writePlanesToFile(string filename){
-		ofstream fs(filename);
+		ofstream fs(filename.c_str());
 		for (int i=0;i<this->listPlanes.size();i++){
 			fs << this->listPlanes[i]->point.x << " "
 				<< this->listPlanes[i]->point.y << " " 

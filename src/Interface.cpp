@@ -128,7 +128,7 @@ namespace sokaris
         
         cout << m->getListCamerasSize() << endl;
         cout << m->getListGazesSize() << endl;
-        m->writeResultToFile("xsd.dae",0.1,5,5,5,135,45,0);
+        m->writeDAEResultToFile("xsd.dae",0.1,5,5,5,135,45,0);
         
         Gaze* g = new Gaze();
         g->setAngles(Point3d(1,1,1));

@@ -11,8 +11,6 @@
 		5780D61F17535EAC00CA8B89 /* findEyeCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5780D61A17535A2400CA8B89 /* findEyeCenter.cpp */; };
 		5780D62017535EB000CA8B89 /* findEyeCorner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5780D61C17535A2400CA8B89 /* findEyeCorner.cpp */; };
 		5780D62317535EF700CA8B89 /* helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5780D62117535EF700CA8B89 /* helpers.cpp */; };
-		57969F3D17608A2E00E7084F /* ehci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57969F3C17608A2E00E7084F /* ehci.cpp */; };
-		57969F4117608A7B00E7084F /* DOFHead.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57969F3F17608A7B00E7084F /* DOFHead.cpp */; };
 		57D5276F17383F4100A31CE3 /* sokaris.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 57D5276E17383F4100A31CE3 /* sokaris.1 */; };
 		57D5277617383FEB00A31CE3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D5277517383FEB00A31CE3 /* main.cpp */; };
 		57D52779173840E400A31CE3 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D52777173840E400A31CE3 /* Map.cpp */; };
@@ -328,8 +326,6 @@
 				5D0D146A175CCFC70082F2C1 /* Position.cpp in Sources */,
 				5D1226BB175CF0E80077BC4D /* Output.cpp in Sources */,
 				5D0E2CB317607F850077F77E /* MultiplePositions.cpp in Sources */,
-				57969F3D17608A2E00E7084F /* ehci.cpp in Sources */,
-				57969F4117608A7B00E7084F /* DOFHead.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

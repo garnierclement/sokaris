@@ -11,6 +11,8 @@
 		5780D61F17535EAC00CA8B89 /* findEyeCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5780D61A17535A2400CA8B89 /* findEyeCenter.cpp */; };
 		5780D62017535EB000CA8B89 /* findEyeCorner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5780D61C17535A2400CA8B89 /* findEyeCorner.cpp */; };
 		5780D62317535EF700CA8B89 /* helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5780D62117535EF700CA8B89 /* helpers.cpp */; };
+		57969F3D17608A2E00E7084F /* ehci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57969F3C17608A2E00E7084F /* ehci.cpp */; };
+		57969F4117608A7B00E7084F /* DOFHead.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57969F3F17608A7B00E7084F /* DOFHead.cpp */; };
 		57D5276F17383F4100A31CE3 /* sokaris.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 57D5276E17383F4100A31CE3 /* sokaris.1 */; };
 		57D5277617383FEB00A31CE3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D5277517383FEB00A31CE3 /* main.cpp */; };
 		57D52779173840E400A31CE3 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57D52777173840E400A31CE3 /* Map.cpp */; };
@@ -67,6 +69,10 @@
 		5780D61E17535CBE00CA8B89 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = SOURCE_ROOT; };
 		5780D62117535EF700CA8B89 /* helpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = helpers.cpp; sourceTree = SOURCE_ROOT; };
 		5780D62217535EF700CA8B89 /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = SOURCE_ROOT; };
+		57969F3C17608A2E00E7084F /* ehci.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ehci.cpp; sourceTree = SOURCE_ROOT; };
+		57969F3E17608A5B00E7084F /* ehci.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ehci.h; sourceTree = SOURCE_ROOT; };
+		57969F3F17608A7B00E7084F /* DOFHead.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DOFHead.cpp; sourceTree = SOURCE_ROOT; };
+		57969F4017608A7B00E7084F /* DOFHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOFHead.h; sourceTree = SOURCE_ROOT; };
 		57D5276917383F4100A31CE3 /* sokaris */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sokaris; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D5276E17383F4100A31CE3 /* sokaris.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = sokaris.1; sourceTree = SOURCE_ROOT; };
 		57D5277517383FEB00A31CE3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
@@ -138,6 +144,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57969F3B17608A1B00E7084F /* EHCI */ = {
+			isa = PBXGroup;
+			children = (
+				57969F3E17608A5B00E7084F /* ehci.h */,
+				57969F3C17608A2E00E7084F /* ehci.cpp */,
+				57969F3F17608A7B00E7084F /* DOFHead.cpp */,
+				57969F4017608A7B00E7084F /* DOFHead.h */,
+			);
+			name = EHCI;
+			sourceTree = "<group>";
+		};
 		57D5276017383F4100A31CE3 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				57D5277517383FEB00A31CE3 /* main.cpp */,
+				57969F3B17608A1B00E7084F /* EHCI */,
 				57D5277A173842F600A31CE3 /* Classes */,
 				57D5276E17383F4100A31CE3 /* sokaris.1 */,
 			);
@@ -310,6 +328,8 @@
 				5D0D146A175CCFC70082F2C1 /* Position.cpp in Sources */,
 				5D1226BB175CF0E80077BC4D /* Output.cpp in Sources */,
 				5D0E2CB317607F850077F77E /* MultiplePositions.cpp in Sources */,
+				57969F3D17608A2E00E7084F /* ehci.cpp in Sources */,
+				57969F4117608A7B00E7084F /* DOFHead.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

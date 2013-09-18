@@ -14,24 +14,6 @@ Membres de l'équipe :
 - Fujia Hou
 
 
-## Genèse du projet
-
-Dans le cadre du projet innovant au Département Télécommunications de l'INSA de Lyon, nous avons développé …
-
 ## Présentation de la solution innovante
 
-voir cahier OSEO
-
-> publicité
-
-## Réalisation d'un prototype
-
-L'objectif de notre prototype est de prouver la faisabilité technique de notre projet en considérant un environnement simple …
-
-Il aura les caractéristiques suivantes : 
-
-- blabla
-- sdfsfd
-
-Et se basent sur les techniques ...
-
+http://akh-partners.insa-lyon.fr/
